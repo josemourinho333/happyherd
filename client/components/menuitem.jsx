@@ -6,7 +6,6 @@ const MenuItem = ({ name, subMenu}) => {
   useEffect(() => {
     const clickEvent = (e) => {
       const isDropdownBtn = e.target.matches("[data-dropdown-button]")
-      console.log('clickinghhhh', !isDropdownBtn, e.target.closest("[data-dropdown]") != null)
       if (!isDropdownBtn && e.target.closest("[data-dropdown]") != null) {
         return
       }
