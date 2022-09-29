@@ -20,6 +20,7 @@ a {
   box-sizing: border-box;
 }
 
+// navbar css -
 .dropdown.active > .dropdown-menu,
 .menu-item:hover {
   color: #000;
@@ -47,3 +48,38 @@ a {
     transform: rotate(180deg);
   }
 }
+// - end
+
+// carousel css -
+.carousel-container {
+  height: 75vh;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.imgs {
+  grid-area: 1 / 1 / 6 / 4;
+  object-fit: cover;
+}
+
+.arrows {
+  z-index: 100;
+  cursor: pointer;
+}
+
+.arrow-left {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.arrow-right {
+  grid-area: 1 / 3 / 6 / 4;
+}
+
+.dots {
+  grid-area: 5 / 2 / 6 / 3;
+  justify-self: center;
+  align-self: end;
+  padding-bottom: 1rem;
+}
+
+// - end

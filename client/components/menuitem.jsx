@@ -43,10 +43,10 @@ const MenuItem = ({ name, subMenu}) => {
   }
 
   // loop over child menu items and display it with dropdown
-  const subMenuItems = subMenu?.map((item) => {
+  const subMenuItems = subMenu?.map((item, index) => {
     const link = item.split(' ').join('').toLowerCase();
     return (
-      <a href={`/${link}`} className="py-2 px-1 hover:text-black">
+      <a key={index} href={`/${link}`} className="py-2 px-1 hover:text-black">
         {item}
       </a>
     )
