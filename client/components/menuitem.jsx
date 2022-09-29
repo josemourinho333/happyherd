@@ -29,6 +29,7 @@ const MenuItem = ({ name, subMenu}) => {
     }
   }, [])
 
+  // no child menu items
   if (!subMenu) {
     const link = name.toLowerCase()
 
@@ -41,14 +42,24 @@ const MenuItem = ({ name, subMenu}) => {
     )
   }
 
+  // loop over child menu items and display it with dropdown
+  const subMenuItems = subMenu?.map((item) => {
+    const link = item.split(' ').join('').toLowerCase();
+    return (
+      <a href={`/${link}`} className="py-2 px-1 hover:text-black">
+        {item}
+      </a>
+    )
+  })
+
   return (
     <li className="pr-5 dropdown relative" data-dropdown>
       <button className="dropdown-menu menu-item flex items-center" data-dropdown-button>
         {name}
-        <FiChevronDown className="mt-1 ml-1"/>
+        <FiChevronDown className="mt-1 ml-1 dropdown-arrow"/>
       </button>
-      <div className="sub-menu absolute left-0 top-[calc(100%_+_0.25rem)] bg-white p-[0.75rem] rounded shadow-lg">
-        Menu
+      <div className="sub-menu absolute left-0 top-[calc(100%_+_0.25rem)] bg-white p-[0.75rem] rounded-lg shadow-lg flex flex-col min-w-max items-start">
+        {subMenuItems}
       </div>
     </li>
   )

@@ -32,8 +32,18 @@ a {
   pointer-events: none;
 }
 
-.dropdown.active > .dropdown-menu + .sub-menu {
-  opacity: 1;
-  transform: translateY(0px);
-  pointer-events: auto;
+.dropdown-arrow {
+  transition: transform 150ms ease-in-out;
+}
+
+.dropdown.active {
+  .dropdown-menu + .sub-menu {
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: auto;
+  }
+
+  .dropdown-arrow {
+    transform: rotate(180deg);
+  }
 }
