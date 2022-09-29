@@ -19,3 +19,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.dropdown.active > .dropdown-menu,
+.menu-item:hover {
+  color: #000;
+}
+
+.sub-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; 
+  pointer-events: none;
+}
+
+.dropdown.active > .dropdown-menu + .sub-menu {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
