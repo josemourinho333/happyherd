@@ -10,7 +10,7 @@ const NavBar = () => {
             <img src="https://happyherd.org/wp-content/uploads/2017/12/TheHappyHerd-Logo.png" alt="logo" className="logo-img w-full" />
           </a>
         </div>
-        <button className="bg-emerald-200 py-2 px-4 rounded-lg font-semibold ">Book a Tour</button>
+        <button className="bg-emerald-200 py-2 px-4 rounded-lg font-semibold hover:bg-emerald-400">Book a Tour</button>
       </div>
       <div className="bg-emerald-200 px-10 py-3">
         <ul className="flex text-sm">
