@@ -62,6 +62,13 @@ a {
   object-fit: cover;
 }
 
+.img-content {
+  grid-area: 1 / 1 / 6 / 4;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
 .arrows {
   z-index: 100;
   cursor: pointer;
