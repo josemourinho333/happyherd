@@ -58,7 +58,7 @@ const MenuItem = ({ name, subMenu}) => {
         {name}
         <FiChevronDown className="mt-1 ml-1 dropdown-arrow"/>
       </button>
-      <div className="sub-menu absolute left-0 top-[calc(100%_+_0.25rem)] bg-white p-[0.75rem] rounded-lg shadow-lg flex flex-col min-w-max items-start">
+      <div className="sub-menu absolute left-0 top-[calc(100%_+_0.25rem)] bg-white p-[0.75rem] rounded-lg shadow-lg flex flex-col min-w-max items-start text-slate-800">
         {subMenuItems}
       </div>
     </li>

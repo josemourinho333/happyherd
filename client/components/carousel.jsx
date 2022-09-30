@@ -76,11 +76,11 @@ const Carousel = () => {
   const dots = imgs.map((img, index) => {
     if (index === slide) {
       return (
-        <RiCheckboxBlankCircleFill key={index} className="w-3 h-3 mx-1 text-emerald-200" onClick={() => fastTravelSlide(index)}/>
+        <RiCheckboxBlankCircleFill key={index} className="w-3 h-3 mx-1 text-slate-200" onClick={() => fastTravelSlide(index)}/>
       )
     } else {
       return (
-        <RiCheckboxBlankCircleLine key={index} className="w-3 h-3 mx-1 text-emerald-200" onClick={() => fastTravelSlide(index)}/>
+        <RiCheckboxBlankCircleLine key={index} className="w-3 h-3 mx-1 text-slate-200" onClick={() => fastTravelSlide(index)}/>
       )
     }
   })
@@ -88,17 +88,17 @@ const Carousel = () => {
   return (
     <section className="carousel-container grid items-center">
       <div 
-        className="arrows arrow-left bg-emerald-200 rounded-full flex justify-center mx-3"
+        className="arrows arrow-left bg-slate-800 rounded-full flex justify-center mx-3"
         onClick={prevSlide}
       >
-        <GoChevronLeft className="w-7 h-7"/>
+        <GoChevronLeft className="w-7 h-7 text-slate-200"/>
       </div>
       {imgs[slide]}
       <div 
-        className="arrows arrow-right bg-emerald-200 rounded-full flex justify-center mx-3"
+        className="arrows arrow-right bg-slate-800 rounded-full flex justify-center mx-3"
         onClick={nextSlide}
       >
-        <GoChevronRight className="w-7 h-7"/>
+        <GoChevronRight className="w-7 h-7 text-slate-200"/>
       </div>
       <div className="dots flex">
         {dots}

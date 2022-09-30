@@ -1,0 +1,20 @@
+.howtohelp-container {
+  background-color: #2dd4bf;
+  background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+  // height: 100vh;
+  display: flex;
+  // flex-direction: column;
+}
+
+.title {
+  box-shadow: 7px 9px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  padding: 0 2rem;
+}

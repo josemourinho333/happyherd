@@ -2,7 +2,7 @@ import { SiFacebook, SiTwitter, SiInstagram } from 'react-icons/si';
 
 const Footer = () => {
   return (
-    <footer className="footer flex flex-col items-center bg-emerald-200 py-5 px-3">
+    <footer className="footer flex flex-col items-center bg-slate-100 py-5 px-3">
       <div className="flex flex-col items-center my-3">
         <div className="w-1/3">
           <img src="https://happyherd.org/wp-content/uploads/2017/12/TheHappyHerd-Logo.png" alt="happy-herd-logo" className="w-full"/>

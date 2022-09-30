@@ -1,0 +1,16 @@
+.context-imgs {
+  display: grid;
+  padding: 5rem;
+  grid-template-columns: repeat(auto, 200px);
+  grid-template-rows: repeat(auto, 200px);
+  
+  div:first-child {
+    grid-area: 1 / 2 / 3 / 4;
+    height: 100%;
+  }
+
+  div {
+    grid-area: 2 / 1 / 4 / 3;
+    align-self: end;
+  }
+}
