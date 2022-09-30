@@ -16,12 +16,12 @@ const HowToHelp = () => {
       <div className="options flex w-1/2">
         <div className={`${styles.option} w-1/2`}>
           <h1 className="sub-title font-bold text-slate-800 text-3xl self-end">Donate</h1>
-          <p className="sub-desc text-center">Make a one time or a monthly donation to the Happy Herd.</p>
+          <p className="sub-desc text-center font-light">Make a one time or a monthly donation to the Happy Herd.</p>
           <button className="sub-cta rounded-lg px-4 py-2 bg-slate-800 text-slate-200 hover:bg-rose-300">Donate</button>
         </div>
         <div className={`${styles.option} w-1/2`}>
           <h1 className="sub-title font-bold text-slate-800 text-3xl self-end">Volunteer</h1>
-          <p className="sub-desc text-center">Volunteers are critical in running our sanctuary. We have volunteers care for the animals 365 days a year!</p>
+          <p className="sub-desc text-center font-light">Volunteers are critical in running our sanctuary. We have volunteers care for the animals 365 days a year!</p>
           <button className="sub-cta rounded-lg px-4 py-2 bg-slate-800 text-slate-200 hover:bg-rose-300">Volunteer</button>
         </div>
       </div>

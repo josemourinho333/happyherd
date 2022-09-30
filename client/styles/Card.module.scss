@@ -1,0 +1,12 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid orange;
+}
+
+.readmore {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
