@@ -3,6 +3,7 @@ import { request } from 'graphql-request';
 import useSWR from 'swr';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import { RiCheckboxBlankCircleFill, RiCheckboxBlankCircleLine } from 'react-icons/ri';
+import { formatCaption } from '../helpers/formatCaption';
 
 const fetcher = (query) => request(process.env.happyHerdApi, query).then((data) => data)
   .catch((err) => console.log('err', err));
@@ -18,6 +19,7 @@ const Carousel = () => {
             title(format: RENDERED)
             srcSet
             sourceUrl
+            caption(format: RENDERED)
           }
         }
       }
@@ -51,8 +53,22 @@ const Carousel = () => {
 
   // loop over fetched data and return img jsx
   const imgs = data.mediaItems.edges?.map((item) => {
+    const {title, cta, moreInfo, caption} = formatCaption(item.node.caption);
+
     return (
-      <img key={item.node.id} src={item.node.sourceUrl} alt={item.node.title} className="w-full h-full imgs"/>
+      <>
+        <img key={item.node.id} src={item.node.sourceUrl} alt={item.node.title} className="w-full h-full imgs"/>
+        <div className="flex flex-col img-content items-center bg-black/40">
+          <h1 className="font-bold text-5xl text-white my-2">{title}</h1>
+          <p className="text-white text-lg my-2">{caption}</p>
+          <button className="bg-amber-500 py-1 px-2 rounded-lg font-semibold text-white text-lg my-1">{cta}</button>
+          {
+            !moreInfo
+            ? <></>
+            : <p className="text-white text-sm my-2">{moreInfo}</p>
+          }
+        </div>
+      </>
     )
   });
 
