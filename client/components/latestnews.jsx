@@ -32,9 +32,9 @@ const LatestNews = () => {
   if (!data) return <div>Loading...</div>
   
   const newsList = data?.posts.nodes;
-  const newsCards = newsList?.map((news, index) => {
+  const newsCards = newsList?.map((news) => {
     return (
-      <Card key={news.id ? news.id : index} data={news} />
+      <Card key={news.id} data={news} blogs={true}/>
     )
   });
 
