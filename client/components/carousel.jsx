@@ -48,7 +48,6 @@ const Carousel = () => {
 
   // clickign circle will take you to the slider instead of using arrows
   const fastTravelSlide = (sliderPage) => {
-    console.log('wtf', sliderPage);
     setSlide(sliderPage);
   };
 
@@ -58,11 +57,11 @@ const Carousel = () => {
 
     return (
       <>
-        <img key={item.node.id} src={item.node.sourceUrl} alt={item.node.title} className="w-full h-full imgs"/>
-        <div className="flex flex-col img-content items-center bg-black/40">
-          <h1 className="font-bold text-5xl text-white my-2">{title}</h1>
-          <p className="text-white text-lg my-2">{caption}</p>
-          <button className="bg-amber-500 py-1 px-2 rounded-lg font-semibold text-white text-lg my-1">{cta}</button>
+        <img key={item.node.id} src={item.node.sourceUrl} alt={item.node.title} className="w-full h-full imgs object-top"/>
+        <div className="flex flex-col img-content items-start bg-black/10 px-20">
+          <h1 className="font-bold text-5xl text-white">{title}</h1>
+          <p className="text-white text-lg font-light mt-1 mb-10">{caption}</p>
+          <button className="bg-transparent border border-white py-1 px-3 rounded-sm font-semibold text-white text-md hover:bg-black">{cta}</button>
           {
             !moreInfo
             ? <></>
@@ -77,30 +76,30 @@ const Carousel = () => {
   const dots = imgs.map((img, index) => {
     if (index === slide) {
       return (
-        <RiCheckboxBlankCircleFill key={index} className="w-3 h-3 mx-1 text-slate-200" onClick={() => fastTravelSlide(index)}/>
+        <RiCheckboxBlankCircleFill key={index} className="w-2.5 h-2.5 mx-1 text-white" onClick={() => fastTravelSlide(index)}/>
       )
     } else {
       return (
-        <RiCheckboxBlankCircleLine key={index} className="w-3 h-3 mx-1 text-slate-200" onClick={() => fastTravelSlide(index)}/>
+        <RiCheckboxBlankCircleLine key={index} className="w-2.5 h-2.5 mx-1 text-white" onClick={() => fastTravelSlide(index)}/>
       )
     }
   })
 
   return (
-    <section className="carousel-container grid items-center">
-      <div 
-        className="arrows arrow-left bg-slate-800 rounded-full flex justify-center mx-3"
+    <section className="carousel-container grid">
+      {/* <div 
+        className="arrows arrow-left flex items-center hover:bg-black/50"
         onClick={prevSlide}
       >
         <GoChevronLeft className="w-7 h-7 text-slate-200"/>
-      </div>
+      </div> */}
       {imgs[slide]}
-      <div 
-        className="arrows arrow-right bg-slate-800 rounded-full flex justify-center mx-3"
+      {/* <div 
+        className="arrows arrow-right flex items-center hover:bg-black/50"
         onClick={nextSlide}
       >
         <GoChevronRight className="w-7 h-7 text-slate-200"/>
-      </div>
+      </div> */}
       <div className="dots flex">
         {dots}
       </div>
