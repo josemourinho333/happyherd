@@ -22,7 +22,7 @@ const WhoWeAre = ({ data }) => {
         <p className="font-light my-[2rem]">
           On 4 wonderful acres, you can find the many animals we have rescued roaming freely. We have several goats, sheep, chickens, cows, pigs, turkeys, ducks, cats, a dog, and a wonderful friendly donkey! Each with their <strong>own identity and personality</strong>, you can find out more about them by clicking below. We became official in August 2018, when we became a registered charity.
         </p>
-        <button className="bg-black border border-black text-white rounded-full px-5 py-2 self-start hover:bg-white hover:border border-black hover:text-black flex align-center">
+        <button className="bg-black border border-black text-white rounded-full px-5 py-2 self-start hover:bg-white hover:border hover:text-black flex align-center">
           Rescued Animals
           <HiOutlineArrowRight className="ml-2 mt-1.5"/>
         </button>

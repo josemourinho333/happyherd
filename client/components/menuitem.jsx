@@ -5,9 +5,11 @@ const MenuItem = ({ name, subMenu}) => {
 
   useEffect(() => {
     const clickEvent = (e) => {
-      const isDropdownBtn = e.target.matches("[data-dropdown-button]")
+      const isDropdownBtn = e.target.matches("[data-dropdown-button]");
+
+      // clicking inside while expanded won't do anything
       if (!isDropdownBtn && e.target.closest("[data-dropdown]") != null) {
-        return
+        return;
       }
 
       let currentDropdown
