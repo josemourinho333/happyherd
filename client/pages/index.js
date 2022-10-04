@@ -1,6 +1,7 @@
 import Carousel from '../components/carousel';
 import WhoWeAre from '../components/whoweare';
 import HowToHelp from '../components/howtohelp';
+import LatestNews from '../components/latestnews';
 import {request} from 'graphql-request';
 
 function Home({ data }) {
@@ -9,6 +10,7 @@ function Home({ data }) {
       <Carousel />
       <WhoWeAre data={data}/>
       <HowToHelp />
+      <LatestNews />
     </>
   )
 };

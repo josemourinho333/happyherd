@@ -48,6 +48,7 @@ const Carousel = () => {
 
   // clickign circle will take you to the slider instead of using arrows
   const fastTravelSlide = (sliderPage) => {
+    console.log('wtf', sliderPage);
     setSlide(sliderPage);
   };
 
