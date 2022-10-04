@@ -90,3 +90,57 @@ a {
   padding-bottom: 1rem;
 }
 // - end
+
+// how to help options css
+
+.options.active {
+  border-color: #000;
+  color: #000;
+
+  p {
+    font-weight: 300;
+    display: block;
+  }
+
+  button {
+    display: flex;
+  }
+}
+
+.options {
+  border-left-width: 4px;
+  border-color: rgb(134, 134, 134);
+  padding: 0 1.25rem;
+  margin: 1rem 0;
+  color: rgb(134, 134, 134);
+  
+  h1 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-weight: 300;
+    display: none;
+  }
+
+  button {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 9999px;
+    padding: 0.5rem 1.25rem;
+    display: none;
+    align-self: flex-start;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}
