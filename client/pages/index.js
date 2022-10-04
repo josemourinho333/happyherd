@@ -2,6 +2,7 @@ import Carousel from '../components/carousel';
 import WhoWeAre from '../components/whoweare';
 import HowToHelp from '../components/howtohelp';
 import LatestNews from '../components/latestnews';
+import Subscribe from '../components/subscribe';
 import {request} from 'graphql-request';
 
 function Home({ data }) {
@@ -11,6 +12,7 @@ function Home({ data }) {
       <WhoWeAre data={data}/>
       <HowToHelp />
       <LatestNews />
+      <Subscribe />
     </>
   )
 };
