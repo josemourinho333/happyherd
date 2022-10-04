@@ -2,10 +2,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fefce8;
 }
 
 .list {
   display: flex;
+  flex-wrap: nowrap;
   width: 100%;
-  border: 1px solid red;
+  // border: 1px solid red;
+  overflow-x: auto;
+}
+
+.list::-webkit-scrollbar {
+  background: #64748b;
+  border-radius: 2rem;
+  height: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 2rem
 }

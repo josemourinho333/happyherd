@@ -48,7 +48,7 @@ const HowToHelp = () => {
         </p>
       </div>
 
-      <div className="options flex w-1/2">
+      <div className="options flex w-1/2 justify-center">
         {howToHelp}
       </div>
 
