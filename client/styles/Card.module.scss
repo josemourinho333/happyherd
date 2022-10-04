@@ -1,4 +1,4 @@
-.card {
+.cardBlog {
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
@@ -12,6 +12,21 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   height: 50%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+// non blog card style
+.card {
+  padding: 0 1rem;
+  width: 100%;
+  height: 70vh;
+}
+
+.imgCard {
+  border-radius: 0.25rem;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: top;

@@ -3,27 +3,27 @@ import { capitalize } from '../helpers/capitalize';
 import parse from 'html-react-parser';
 
 const Card = (props) => {
-  console.log('dadddd', props); 
+  // console.log('dadddd', props); 
   // const { id, title, date, content, slug } = data;
-  if (!props.blogs) {
-    return (
-      <article className={`${styles.card} text-slate-800 bg-white mx-2 shadow-xl`}>
-        <img src={props.data.sourceUrl} alt="" className={`${styles.img}`}/>
-        <div className={`${styles.content}`}>
-          <h1 className="title text-slate-800 text-3xl">{capitalize(props.data.altText)}</h1>
-          {parse(props.data.caption)}
-          <a href={`/${props.data.altText}`} className={`${styles.readmore} bg-slate-800 text-slate-200`}>{capitalize(props.data.altText)}</a>
-        </div>
-      </article>
-    )
-  };
+  // if (!props.blogs) {
+  //   return (
+  //     <article className={`${styles.card}`}>
+  //       <img src={props.data.sourceUrl} alt="" className={`${styles.imgCard}`}/>
+  //       {/* <div className={`${styles.content}`}>
+  //         <h1 className="title text-slate-800 text-3xl">{capitalize(props.data.altText)}</h1>
+  //         {parse(props.data.caption)}
+  //         <a href={`/${props.data.altText}`} className={`${styles.readmore} bg-slate-800 text-slate-200`}>{capitalize(props.data.altText)}</a>
+  //       </div> */}
+  //     </article>
+  //   )
+  // };
 
   const parsed = parse(props.data.content).filter((item) => item.type === "p");
   // console.log('parsed', parsed);
 
 
   return (
-    <article className={`${styles.card} text-slate-800 bg-white mx-2 shadow-xl`}>
+    <article className={`${styles.cardBlog} text-slate-800 bg-white mx-2 shadow-xl`}>
       <img src={props.data.featuredImage?.node.sourceUrl ? props.data.featuredImage?.node.sourceUrl : `https://happyherd.org/wp-content/uploads/2020/06/lincoln-lola-e1624407341856.jpg`} alt="" className={`${styles.img}`}/>
       <div className={`${styles.content}`}>
         <h1 className="title text-slate-800 text-2xl">{props.data.title}</h1>
