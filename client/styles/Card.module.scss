@@ -3,9 +3,9 @@
   flex-direction: column;
   border-radius: 1rem;
   align-items: center;
-  min-width: 500px;
-  min-height: 300px;
-  margin: 2rem;
+  min-width: 400px;
+  min-height: 50px;
+  margin: 3rem;
 }
 
 .img {
@@ -17,44 +17,35 @@
   object-position: top;
 }
 
-// non blog card style
-.card {
-  padding: 0 1rem;
-  width: 100%;
-  height: 70vh;
-}
-
-.imgCard {
-  border-radius: 0.25rem;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
 .content {
   width: 100%;
   height: 50%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   h1 {
-    font-weight: 700;
+    font-weight: 400;
   }
 
-  p {
-    font-weight: 400;
-    color: #1e293b;
-    justify-self: start;
-  }
 }
 
 .readmore {
-  border-radius: 2rem;
-  font-weight: 600;
-  align-self: start;
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 9999px;
+  padding: 0.3rem 1rem;
+  display: flex;
+  align-self: flex-start;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
 }
