@@ -7,7 +7,7 @@ const Volunteer = () => {
     const handleClick = (e) => {
       const isTabBtn = e.target.matches('.tabBtn');
 
-      if (!isTabBtn && e.target.closest('.tabContent')) {
+      if (!isTabBtn || e.target.closest('.tabContent')) {
         return;
       }
 
@@ -51,25 +51,25 @@ const Volunteer = () => {
           <button className="tabBtn">Transportation</button>
         </div>
         <div className="content">
-          <p className="tabContent active" id="info">
+          <div className="tabContent active" id="info">
             <ul>
               <li>Must be 16 years or older.</li>
               <li>We prefer volunteers are able to commit to a regular schedule - once a week or every two weeks.</li>
               <li>Call or text Diane if you are unable to come on your scheduled day (number will be provided once confirmed as volunteer).</li>
               <li>We do not permit outside dogs as our chickens, ducks and turkeys are free to wander around the property.</li>
             </ul>
-          </p>
-          <p className="tabContent" id="hours">
+          </div>
+          <div className="tabContent" id="hours">
             <ul>
               <li>Volunteering hours are open year round between the following hours:</li>
               <li>9:30 AM - 12:00 PM</li>
             </ul>
-          </p>
-          <p className="tabContent" id="transportation">
+          </div>
+          <div className="tabContent" id="transportation">
             <ul>
               <li>Unfortunately, there is no convenient public transportation to our Sanctuary therefore private or group arranged transportation must be organized by the volunteers.</li>
             </ul>
-          </p>
+          </div>
         </div>
       </div>
     </section>

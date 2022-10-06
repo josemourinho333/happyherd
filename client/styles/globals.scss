@@ -178,11 +178,11 @@ a {
 }
 
 .content {
-  p {
+  div {
     display: none;
   }
 
-  p.active {
+  div.active {
     display: block;
     text-align: center;
     width: 80%;
