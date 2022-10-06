@@ -1,0 +1,30 @@
+.volunteer {
+  margin: 3rem 0rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: gray;
+    letter-spacing: 0.15rem;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  p {
+    margin: 1rem;
+    font-weight: 300;
+    font-size: 0.90rem;
+    text-align: center;
+    width: 70%;
+  }
+}
