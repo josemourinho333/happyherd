@@ -144,3 +144,58 @@ a {
     }
   }
 }
+
+// end
+
+// volunteer section
+// .tabs.active {
+//   display: flex;
+//   button {
+//     font-weight: 600;
+//     font-size: 1.10rem;
+//     border-bottom: 2px solid black;
+//     padding: 1rem 2rem;
+//     width: 300px;
+//   }
+// }
+
+.tabs {
+  display: flex;
+  button {
+    font-weight: 600;
+    font-size: 1.10rem;
+    padding: 1rem 2rem;
+    width: 300px;
+  }
+
+  button.active {
+    font-weight: 600;
+    font-size: 1.10rem;
+    border-bottom: 2px solid black;
+    padding: 1rem 2rem;
+    width: 300px;
+  }
+}
+
+.content {
+  p {
+    display: none;
+  }
+
+  p.active {
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    font-weight: 400;
+    font-size: 0.90rem;
+    letter-spacing: 0.15rem;
+
+    ul {
+      li {
+        margin: 0.75rem 0rem;
+      }
+    }
+  }
+}
