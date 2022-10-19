@@ -1,8 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
 import useSWR from 'swr';
 import { request } from 'graphql-request';
 import styles from '../styles/Rescuedanimals.module.scss';
+import Card from '../components/card';
 
 const fetcher = (query) => request(process.env.happyHerdApi, query)
   .then((data) => data)
@@ -12,19 +12,24 @@ const rescuedanimals = () => {
   const { data, error } = useSWR(
   `
   {
-    pages(where: {parent: "rescued-animals"}, first: 100) {
+    animals(first: 100, where: {categoryName: "alive"}) {
       edges {
         node {
           id
+          title(format: RENDERED)
+          content(format: RENDERED)
           slug
-          title
           featuredImage {
             node {
-              sourceUrl(size: LARGE)
+              sourceUrl
             }
           }
-          status
-          content(format: RENDERED)
+          tags {
+            nodes {
+              slug
+              name
+            }
+          }
         }
       }
     }
@@ -35,20 +40,22 @@ const rescuedanimals = () => {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  const animalsList = data.pages.edges.filter((item) => {
-    return item.node.featuredImage !== null && item.node.status === 'publish'
-  });
+  console.log('animals', data.animals.edges);
 
-  const animalCards = animalsList.map((animal) => {
+  const animalCards = data.animals.edges.map((animal) => {
     return (
-      <div key={animal.node.id} className={`${styles.card} shadow-lg`}>
-        <img src={animal.node.featuredImage.node.sourceUrl} alt="featured-img" />
-        {/* {animal.node.title} */}
-      </div>
+      <Card 
+        key={animal.node.id}
+        name={animal.node.title}
+        bio={animal.node.content}
+        img={animal.node.featuredImage.node.sourceUrl}
+        slug={animal.node.slug}
+        tags={animal.node.tags.nodes[0].name}
+        tagSlug={animal.node.tags.nodes[0].slug}
+      />
     )
   })
 
-  console.log('animals?', animalsList);
    
   return (
     <section className={styles.rescued}>
