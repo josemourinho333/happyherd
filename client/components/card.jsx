@@ -32,12 +32,12 @@ const Card = (props) => {
             <h2 className="card-title text-primary">{props.name}</h2>
             <p></p>
             <div className="card-actions justify-between">
-              <label htmlFor="my-modal-6" className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm modal-button">open modal</label>
+              <label htmlFor={`my-modal-${props.slug}`} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm modal-button">open modal</label>
               <button className="btn btn-outline btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Sponsor Me</button>
             </div>
           </div>
         </div>
-        <Modal name={props.name} bio={props.bio} img={props.img}/>
+        <Modal name={props.name} bio={props.bio} img={props.img} slug={props.slug}/>
       </>
     )
   }
