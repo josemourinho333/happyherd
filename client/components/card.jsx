@@ -31,8 +31,9 @@ const Card = (props) => {
       <article className={`${styles.card} shadow-lg`}>
         <div>
           <a href={`rescuedanimals/${props.slug}`}>
-            {props.name}
+            {props.name.substring(0, 8)}
           </a>
+          <button>Sponsor Me</button>
         </div>
         <img src={props.img} alt=""/>
       </article>
