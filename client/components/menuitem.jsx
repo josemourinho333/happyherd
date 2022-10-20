@@ -37,7 +37,7 @@ const MenuItem = ({ name, subMenu}) => {
 
     return (
       <li className="pr-5">
-        <a href={`/${link}`} className="flex menu-item items-center">
+        <a href={`/${link}`} className="flex menu-item items-center hover:text-primary">
           {name}
         </a>
       </li>
@@ -48,7 +48,7 @@ const MenuItem = ({ name, subMenu}) => {
   const subMenuItems = subMenu?.map((item, index) => {
     const link = item.split(' ').join('').toLowerCase();
     return (
-      <a key={index} href={`/${link}`} className="py-2 px-1">
+      <a key={index} href={`/${link}`} className="py-2 px-1 hover:text-primary">
         {item}
       </a>
     )
@@ -56,11 +56,11 @@ const MenuItem = ({ name, subMenu}) => {
 
   return (
     <li className="pr-5 dropdown relative" data-dropdown>
-      <button className="dropdown-menu menu-item flex items-center" data-dropdown-button>
+      <button className="dropdown-menu menu-item flex items-center hover:text-primary" data-dropdown-button>
         {name}
         <FiChevronDown className="mt-0.5 ml-0.5 dropdown-arrow"/>
       </button>
-      <div className="sub-menu absolute left-0 top-[calc(100%_+_0.25rem)] bg-white p-[0.75rem] rounded-lg shadow-lg flex flex-col min-w-max items-start">
+      <div className="sub-menu absolute left-0 top-[calc(100%_+_0.25rem)] bg-white p-[0.75rem] rounded-lg drop-shadow-lg flex flex-col min-w-max items-start">
         {subMenuItems}
       </div>
     </li>

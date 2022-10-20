@@ -39,8 +39,8 @@ const LatestNews = () => {
   });
 
   return (
-    <section className={`${styles.container} py-[3rem]`}>
-      <h1 className="title font-semibold text-5xl self-start my-5">Latest from Happy Herd</h1>
+    <section className="flex flex-col items-center py-[3rem]">
+      <h1 className="title font-semibold text-5xl self-start my-5 text-primary">Latest from Happy Herd</h1>
       {/* <div className="h-[1px] w-1/2 bg-slate-800 my-5"></div> */}
       <div className={`${styles.list}`}>
         {newsCards}

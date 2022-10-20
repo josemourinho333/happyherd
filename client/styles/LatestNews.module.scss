@@ -1,9 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .list {
   display: flex;
   flex-wrap: nowrap;
@@ -12,13 +6,15 @@
 }
 
 .list::-webkit-scrollbar {
-  background: #fff;
-  border: 1px solid #000;
+  --tw-text-opacity: 1;
+  background-color: #fff;
+  border: 1px solid hsl(var(--n) / var(--tw-text-opacity));;
   border-radius: 2rem;
   height: 10px;
 }
 
 .list::-webkit-scrollbar-thumb {
-  background: #000;
+  --tw-text-opacity: 1;
+  background-color: hsl(var(--n) / var(--tw-text-opacity));
   border-radius: 2rem
 }
