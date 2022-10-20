@@ -3,9 +3,10 @@ import parse from 'html-react-parser';
 import { HiOutlineArrowRight, HiOutlineChevronDoubleUp } from "react-icons/hi";
 import moment from 'moment';
 import Modal from './modal';
+import { makeSingular } from '../helpers/makeSingular';
 
 const Card = (props) => {
-  console.log('dadddd', props); 
+  // console.log('dadddd', props); 
 
   if (props.blogs) {
     return (
@@ -30,9 +31,10 @@ const Card = (props) => {
           <figure><img src={props.img} alt={`${props.name}-img`} /></figure>
           <div className="card-body h-[500px]">
             <h2 className="card-title text-primary">{props.name}</h2>
+            <div className="badge badge-secondary">{makeSingular(props.tags)}</div>
             <p></p>
             <div className="card-actions justify-between">
-              <label htmlFor={`my-modal-${props.slug}`} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm modal-button">open modal</label>
+              <label htmlFor={`my-modal-${props.slug}`} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm modal-button">Learn More</label>
               <button className="btn btn-outline btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Sponsor Me</button>
             </div>
           </div>

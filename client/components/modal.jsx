@@ -15,7 +15,7 @@ const Modal = ({name, bio, img, slug}) => {
           </div>
           <h3 className="font-bold text-xl">About {name}</h3>
           <p className="py-4">{parse(bio)}</p>
-          <button className="btn btn-primary sm:btn-sm md:btn-md lg:btn-md">Sponsor Me</button>
+          <button className="btn btn-primary sm:btn-sm md:btn-md lg:btn-md">Sponsor {name}</button>
         </div>
       </div>
     </>
