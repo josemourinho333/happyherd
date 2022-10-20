@@ -14,7 +14,7 @@ const WhoWeAre = ({ data }) => {
   return (
     <section className="who-we-are-container flex items-center text-neutral">
       <div className="content-container flex flex-col basis-1/2 px-[1rem]">
-        <h1 className="font-semibold text-5xl">
+        <h1 className="text-primary font-semibold text-5xl">
           The Happy Herd is a <strong>farm animal sanctuary</strong> for animals either abused or at risk.
         </h1>
         <p className="my-[2rem]">
@@ -22,7 +22,7 @@ const WhoWeAre = ({ data }) => {
         </p>
         <button className="btn btn-primary px-5 py-2 self-start flex align-center sm:btn-sm md:btn-md lg:btn-md">
           Rescued Animals
-          <HiOutlineArrowRight className="ml-2 mt-1.5"/>
+          <HiOutlineArrowRight className="ml-2 mt-0.5"/>
         </button>
       </div>
 

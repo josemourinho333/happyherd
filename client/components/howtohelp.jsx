@@ -69,30 +69,30 @@ const HowToHelp = () => {
         {howToHelp}
       </div>
 
-      <div className="intro self-center items-start flex flex-col basis-1/2 px-[1rem]">
-        <h1 className="font-semibold text-5xl text-black">How You Can Help</h1>
-        <p className="intro-content my-8 font-light">
+      <div className="intro self-center items-start flex flex-col basis-1/2 px-[1rem] text-neutral">
+        <h1 className="text-primary font-semibold text-5xl">How You Can Help</h1>
+        <p className="intro-content my-8 text-neutral">
         As one of the first farm animal sanctuaries on Canada's West Coast,
         we are always seeking assistance through volunteers or donations, monetary or in kind. 
         <br/><br/>
         We regularly greet visitors for scheduled tours so people can meet our ever-growing family.
         </p>
 
-        <div className="options active" data-expandable>
-          <h1 id="0" data-expandable-button>Volunteer</h1>
-          <p>Volunteers are critical in running our sanctuary. We have volunteers care for the animals 365 days a year.</p>
-          <button>
+        <div className="options active border-neutral" data-expandable>
+          <h1 id="0" className="text-neutral font-semibold text-2xl" data-expandable-button>Volunteer</h1>
+          <p className="text-neutral">Volunteers are critical in running our sanctuary. We have volunteers care for the animals 365 days a year.</p>
+          <button className="btn btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
             Volunteer
-            <HiOutlineArrowRight className="ml-2 mt-1.5"/>
+            <HiOutlineArrowRight className="ml-2 mt-0.5"/>
           </button>
         </div>
 
-        <div className="options" data-expandable>
-          <h1 id="1" data-expandable-button>Donate</h1>
+        <div className="options border-neutral" data-expandable>
+          <h1 id="1" className="text-neutral font-semibold text-2xl" data-expandable-button>Donate</h1>
           <p>Make a one time or a monthly donation to The Happy Herd.</p>
-          <button>
+          <button className="btn btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
             Donate
-            <HiOutlineArrowRight className="ml-2 mt-1.5"/>
+            <HiOutlineArrowRight className="ml-2 mt-0.5"/>
           </button>
         </div>
       </div>
