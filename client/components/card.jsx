@@ -1,13 +1,10 @@
 import styles from '../styles/Card.module.scss';
 import parse from 'html-react-parser';
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { HiOutlineArrowRight, HiOutlineChevronDoubleUp } from "react-icons/hi";
 import moment from 'moment';
 
 const Card = (props) => {
   console.log('dadddd', props); 
-
-  // const parsed = parse(props.data.content).filter((item) => item.type === "p");
-  // console.log('parsed', parsed);
 
   if (props.blogs) {
     return (
@@ -15,7 +12,6 @@ const Card = (props) => {
         <img src={props.data.featuredImage?.node.sourceUrl ? props.data.featuredImage?.node.sourceUrl : `https://happyherd.org/wp-content/uploads/2020/06/lincoln-lola-e1624407341856.jpg`} alt="" className={`${styles.img}`}/>
         <div className={`${styles.content}`}>
           <h1 className="text-2xl">{props.data.title}</h1>
-          {/* {parse(props.data.content).slice(0, 1)} */}
           <a href={`/${props.data.slug}`} className={`${styles.readmore}`}>
             Read More
             <HiOutlineArrowRight className="ml-2 mt-1.5"/>
@@ -28,15 +24,17 @@ const Card = (props) => {
 
   if (!props.blogs) {
     return (
-      <article className={`${styles.card} shadow-lg`}>
-        <div>
-          <a href={`rescuedanimals/${props.slug}`}>
-            {props.name.substring(0, 8)}
-          </a>
-          <button>Sponsor Me</button>
+      <div className="card w-96 h-[500px] bg-base-100 shadow-xl image-full">
+        <figure><img src={props.img} alt={`${props.name}-img`} /></figure>
+        <div className="card-body h-[500px]">
+          <h2 className="card-title text-primary">{props.name}</h2>
+          <p></p>
+          <div className="card-actions justify-between">
+            <button className="btn btn-outline btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Learn More</button>
+            <button className="btn btn-outline btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Sponsor Me</button>
+          </div>
         </div>
-        <img src={props.img} alt=""/>
-      </article>
+      </div>
     )
   }
 };
