@@ -8,7 +8,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: #000;
   background-color: #fff;
 }
 
@@ -22,9 +21,9 @@ a {
 }
 
 // navbar css -
-.dropdown.active > .dropdown-menu,
-.menu-item:hover {
-  color: #000;
+.dropdown.active > .dropdown-menu {
+  --tw-text-opacity: 1;
+  color: hsl(var(--p) / var(--tw-text-opacity));
 }
 
 .sub-menu {
@@ -94,11 +93,11 @@ a {
 // how to help options css
 
 .options.active {
-  border-color: #000;
-  color: #000;
+  // border-color: #000;
+  // color: #000;
 
   p {
-    font-weight: 300;
+    // font-weight: 500;
     display: block;
   }
 
@@ -109,39 +108,18 @@ a {
 
 .options {
   border-left-width: 4px;
-  border-color: rgb(134, 134, 134);
+  // border-color: primary;
   padding: 0 1.25rem;
   margin: 1rem 0;
-  color: rgb(134, 134, 134);
-  
-  h1 {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-weight: 500;
-  }
+  // color: rgb(134, 134, 134);
 
   p {
-    font-weight: 300;
     display: none;
   }
 
   button {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem/* 14px */;
-    line-height: 1.25rem/* 20px */;
-    background-color: #000;
-    border: 1px solid #000;
-    color: #fff;
-    border-radius: 9999px;
-    padding: 0.5rem 1.25rem;
     display: none;
     align-self: flex-start;
-
-    &:hover {
-      background-color: #fff;
-      color: #000;
-    }
   }
 }
 
