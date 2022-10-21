@@ -1,7 +1,7 @@
 import React from 'react';
 import parse from 'html-react-parser';
 
-const Modal = ({name, bio, img, slug}) => {
+const Modal = ({name, bio, img, slug, dead}) => {
   return (
     <>
       <input type="checkbox" id={`my-modal-${slug}`} className="modal-toggle" />
@@ -15,7 +15,10 @@ const Modal = ({name, bio, img, slug}) => {
           </div>
           <h3 className="font-bold text-xl">About {name}</h3>
           <div className="py-4">{parse(bio)}</div>
-          <button className="btn btn-primary sm:btn-sm md:btn-md lg:btn-md">Sponsor {name}</button>
+          {dead
+            ? <></>
+            : <button className="btn btn-primary sm:btn-sm md:btn-md lg:btn-md">Sponsor {name}</button>
+          }
         </div>
       </div>
     </>

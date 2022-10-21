@@ -1,12 +1,10 @@
 import styles from '../styles/Card.module.scss';
-import parse from 'html-react-parser';
 import { HiOutlineArrowRight, HiOutlineChevronDoubleUp } from "react-icons/hi";
 import moment from 'moment';
 import Modal from './modal';
 import { makeSingular } from '../helpers/makeSingular';
 
 const Card = (props) => {
-  // console.log('dadddd', props); 
 
   if (props.blogs) {
     return (
@@ -35,11 +33,14 @@ const Card = (props) => {
             <p></p>
             <div className="card-actions justify-between">
               <label htmlFor={`my-modal-${props.slug}`} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm modal-button">Learn More</label>
-              <button className="btn btn-outline btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Sponsor Me</button>
+              {props.dead
+                ? <></>
+                : <button className="btn btn-outline btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Sponsor Me</button>
+              }
             </div>
           </div>
         </div>
-        <Modal name={props.name} bio={props.bio} img={props.img} slug={props.slug}/>
+        <Modal name={props.name} bio={props.bio} img={props.img} slug={props.slug} dead={props.dead}/>
       </>
     )
   }

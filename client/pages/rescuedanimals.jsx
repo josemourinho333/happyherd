@@ -3,7 +3,6 @@ import useSWR from 'swr';
 import { request } from 'graphql-request';
 import Card from '../components/card';
 import { GiCow, GiGoat, GiSheep, GiSittingDog, GiCat, GiPig } from 'react-icons/gi';
-import { current } from 'daisyui/src/colors';
 
 
 const fetcher = (query) => request(process.env.happyHerdApi, query)
