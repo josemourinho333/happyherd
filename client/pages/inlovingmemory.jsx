@@ -58,7 +58,6 @@ const InLovingMemory = () => {
   return (
     <section className="flex flex-col items-center my-[2rem]">
       <h1 className="text-primary text-5xl font-semibold">In Loving Memory</h1>
-      <p className="m-[1rem] text-center w-[70%]">Here is our most up to date directory of family members. The following friends are current residents and call the Happy Herd Farm Sanctuary their home. With the freedom to roam and taken care of with the assistance of the founders and volunteers, our family is very happy.</p>
       <div className="divider"></div> 
       <div className="flex flex-wrap justify-center gap-[2rem]">
         {cards}
