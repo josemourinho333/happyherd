@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import { request } from 'graphql-request';
 import Card from '../components/card';
 import { GiCow, GiGoat, GiSheep, GiSittingDog, GiCat, GiPig } from 'react-icons/gi';
+import Hero from '../components/hero';
 
 
 const fetcher = (query) => request(process.env.happyHerdApi, query)
@@ -93,10 +94,13 @@ const rescuedanimals = () => {
   if (!data) return <div>Loading...</div>
    
   return (
-    <section className="flex flex-col items-center my-[2rem]">
-      <h1 className="text-primary text-5xl font-semibold">Meet our residents</h1>
-      <p className="m-[1rem] text-center w-[70%]">Here is our most up to date directory of family members. The following friends are current residents and call the Happy Herd Farm Sanctuary their home. With the freedom to roam and taken care of with the assistance of the founders and volunteers, our family is very happy.</p>
-      <div className="mb-10 flex text-neutral">
+    <section className="flex flex-col items-center">
+      <Hero title="Meet Our Residents" cta="Donate">
+        Here is our most up to date directory of family members. The following friends are current residents and call the Happy Herd Farm Sanctuary their home. With the freedom to roam and taken care of with the assistance of the founders and volunteers, our family is very happy.
+      </Hero>
+      {/* <h1 className="text-primary text-5xl font-semibold">Meet our residents</h1>
+      <p className="m-[1rem] text-center w-[70%]">Here is our most up to date directory of family members. The following friends are current residents and call the Happy Herd Farm Sanctuary their home. With the freedom to roam and taken care of with the assistance of the founders and volunteers, our family is very happy.</p> */}
+      <div className="my-10 flex text-neutral">
         <button 
           onClick={() => typeFilter('cows')}
           className={currentSelect === 'cows' ? `${btnStyle} text-primary` : `${btnStyle}`}>
