@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { request } from 'graphql-request';
 import useSWR from 'swr';
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import { RiCheckboxBlankCircleFill, RiCheckboxBlankCircleLine } from 'react-icons/ri';
 import { formatCaption } from '../helpers/formatCaption';
 
