@@ -34,14 +34,26 @@ const MenuItem = ({ name, subMenu}) => {
   // no child menu items
   if (!subMenu) {
     const link = name.toLowerCase()
+    
+    if (link.includes(' ')) {
+      const replaceSpace = link.replace(' ', '');
 
-    return (
-      <li className="pr-5">
-        <a href={`/${link}`} className="flex menu-item items-center hover:text-primary">
+      return (
+        <li className="pr-5">
+        <a href={`/${replaceSpace}`} className="flex menu-item items-center hover:text-primary">
           {name}
         </a>
       </li>
-    )
+      )
+    } else {
+      return (
+        <li className="pr-5">
+          <a href={`/${link}`} className="flex menu-item items-center hover:text-primary">
+            {name}
+          </a>
+        </li>
+      )
+    }
   }
 
   // loop over child menu items and display it with dropdown
