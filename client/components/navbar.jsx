@@ -17,13 +17,13 @@ const NavBar = () => {
               name="Animals" 
               subMenu={["Rescued Animals", "In Loving Memory"]} 
             />
-            <MenuItem 
-              name="News & Events" 
-              subMenu={["Pig Yoga", "Featured In"]}
-            />
             <MenuItem
               name="Support Us" 
               subMenu={["Sponsor an Animal", "Garths Gift Shop", "Donate", "Supporters"]}
+            />
+            <MenuItem 
+              name="Pig Yoga" 
+              subMenu={null}
             />
             <MenuItem
               name="Volunteer" 
@@ -34,9 +34,11 @@ const NavBar = () => {
               subMenu={null}
             />
           </ul>
-          <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">
+          <button className="btn btn-neutral ml-1 sm:btn-sm md:btn-sm lg:btn-sm">
             Book a Tour
-            <HiOutlineArrowRight className="ml-2 mt-0.5"/>
+          </button>
+          <button className="btn btn-primary ml-4 sm:btn-sm md:btn-sm lg:btn-sm">
+            Donate
           </button>
       </div>
     </nav>
