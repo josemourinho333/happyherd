@@ -24,7 +24,6 @@ const PigYoga = () => {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  console.log('data', data.mediaItems.nodes);
   const yogaPics = data.mediaItems.nodes.map((yogaPic) => {
     return (
       <div key={yogaPic.id} className="basis-1/4 flex">
@@ -47,7 +46,7 @@ const PigYoga = () => {
             <br/>
             Benefits of this class include relaxation, laughter, increased mood, and truly adorable photos!
             </p>
-            <button className="btn btn-primary">Join a class</button>
+            <button className="btn btn-primary"><a href="https://www.eventbrite.ca/o/the-happy-herd-farm-sanctuary-17549758348" target="_blank" rel="noopener noreferrer">Join a class</a></button>
             <p className="py-6 whitespace-pre-wrap text-xs italic">
               All funds from ticket purchases go towards the sanctuary operating costs.
             </p>
