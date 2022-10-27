@@ -14,7 +14,7 @@ const Card = (props) => {
         <h2 className="card-title font-normal text-lg">{props.name}</h2>
         <div className="card-actions justify-between items-end">
           <div className="text-2xl font-bold">${props.price[0].name}</div>
-          <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Buy Now</button>
+          <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm"><a href={`/garthsgiftshop/${props.name}`}>Buy Now</a></button>
         </div>
       </div>
     </div>

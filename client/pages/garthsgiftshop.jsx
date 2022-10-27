@@ -59,6 +59,7 @@ const GarthsGiftShop = () => {
     return (
       <Card 
         key={item.id}
+        id={item.id}
         items={true}
         name={item.title}
         content={item.content}

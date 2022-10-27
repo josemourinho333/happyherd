@@ -5,7 +5,6 @@ import Card from '../components/card';
 import { GiCow, GiGoat, GiSheep, GiSittingDog, GiCat, GiPig } from 'react-icons/gi';
 import Hero from '../components/hero';
 
-
 const fetcher = (query) => request(process.env.happyHerdApi, query)
   .then((data) => data)
   .catch((err) => console.log('err', err));
