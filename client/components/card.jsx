@@ -6,21 +6,6 @@ import { makeSingular } from '../helpers/makeSingular';
 
 const Card = (props) => {
 
-  if (props.items) {
-    return (
-    <div className="card card-compact w-80 h-[400px] bg-base-100 drop-shadow-xl px-3">
-      <figure className="h-1/2"><img src={props.img} alt={props.slug} className="h-full w-auto"/></figure>
-      <div className="card-body justify-evenly">
-        <h2 className="card-title font-normal text-lg">{props.name}</h2>
-        <div className="card-actions justify-between items-end">
-          <div className="text-2xl font-bold">${props.price[0].name}</div>
-          <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm"><a href={`/garthsgiftshop/${props.name}`}>Buy Now</a></button>
-        </div>
-      </div>
-    </div>
-    )
-  }
-
   if (props.blogs) {
     return (
       <article className={`${styles.cardBlog} bg-white mx-2 shadow-lg`}>
