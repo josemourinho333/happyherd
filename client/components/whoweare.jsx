@@ -3,7 +3,7 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 
 
 const WhoWeAre = ({ data }) => {
-  const imgs = data.mediaItems.edges?.map((img) => {
+  const imgs = data.mediaItems?.edges?.map((img) => {
     return (
       <div className="context-img-container" key={img.node.id}>
         <img src={img.node.sourceUrl} alt="..." className="w-full context-img rounded-xl shadow-2xl" />

@@ -55,20 +55,108 @@ const GarthsGiftShop = () => {
   console.log('data', data.items.nodes[0]);
   const productInfo = data.items.nodes[0];
 
+  const colors = productInfo.colors.nodes;
+  let colorOptions;
+
+  if (colors.length > 0) {
+    colorOptions = colors.map((color, index) => {
+      let displayColor;
+      switch(color.name) {
+
+        case "Light Blue":
+          displayColor = "bg-blue-300";
+          break;
+        
+        case "Pink":
+          displayColor = "bg-pink-300";
+          break;
+        
+        case "Blue":
+          displayColor = "bg-blue-500";
+          break;
+
+        case "Green":
+          displayColor = "bg-green-600";
+          break;
+
+        case "Grey":
+          displayColor = "bg-gray-500";
+          break;
+
+        case "Red":
+          displayColor = "bg-red-500";
+          break;
+        
+        case "White":
+          displayColor = "bg-white border border-black";
+          break;
+
+        case "Black":
+          displayColor = "bg-black";
+          break;
+
+        case "Burgundy":
+          displayColor = "bg-rose-900";
+          break;
+
+        case "Charcoal":
+          displayColor = "bg-zinc-800";
+          break;
+
+        case "Navy":
+          displayColor = "bg-blue-900";
+          break;
+
+        case "Red/Grey":
+          displayColor = "bg-gradient-to-r from-red-500 to-gray-500";
+          break;
+
+        default:
+          displayColor = "bg-slate-700"
+      }
+      return (
+        <div className="avatar placeholder" key={index}>
+          <div className={`${displayColor} rounded-full w-3`}>
+            <span className="text-xs"></span>
+          </div>
+        </div>
+      )
+    })
+  } else {
+    colorOptions = <></>;
+  };
+
+  const sizes = productInfo.sizes.nodes;
+  let sizeOptions;
+
+  if (sizes.length > 0) {
+    sizeOptions = sizes.map((size, index) => {
+      return (
+        <div key={index} className="badge mr-1 cursor-pointer">{size.name}</div>
+      )
+    })
+  }
+
   return (
-    <section className="flex h-[90vh] sm:flex-col md:flex-col lg:flex-row">
+    <section className="p-5 flex justify-center sm:flex-col md:flex-col lg:flex-row">
       <div className="basis-1/2">
-        <img src={productInfo.featuredImage?.node.sourceUrl} alt={productInfo.title} className="object-cover h-full w-full"/>
+        <img src={productInfo.featuredImage?.node.sourceUrl} alt={productInfo.title} className="h-[700px] w-full object-cover"/>
       </div>
-      <div className="basis-1/2 flex flex-col items-start justify-center p-10">
-        <h1 className="font-bold text-3xl my-5">{productInfo.title}</h1>
-        <div className="text-lg my-5">
+      <div className="basis-1/2 flex flex-col items-start justify-center p-10 sm:p-2 md:p-2 lg:p-10">
+        <h1 className="font-bold text-2xl my-2">{productInfo.title}</h1>
+        <div className="text-lg my-3">
           {parse(productInfo.content)}     
         </div>
-        <div className="w-full flex items-center justify-between my-10">
-          <div className="font-bold text-5xl">${productInfo.prices.nodes[0].name}</div> 
-          <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Buy Now</button>
+        <div className="text-sm my-1">Available in:</div>
+        <div className="flex gap-1 mb-3">
+          {colorOptions}
         </div>
+        <div className="text-sm my-1">Size:</div>
+        <div className="flex">
+          {sizeOptions}
+        </div>
+        <div className="font-bold text-4xl my-5">${productInfo.prices.nodes[0].name}</div>
+        <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Send Email</button> 
       </div>
     </section>
   )
