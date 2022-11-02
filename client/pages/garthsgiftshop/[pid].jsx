@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { request } from 'graphql-request';
 import parse from 'html-react-parser';
+import GiftShopModal from '../../components/GiftShopModal';
 
 const fetcher = (query) => request(process.env.happyHerdApi, query)
   .then((data) => data)
@@ -21,6 +22,7 @@ const GarthsGiftShop = () => {
               name
             }
           }
+          id
           colors {
             nodes {
               name
@@ -48,11 +50,33 @@ const GarthsGiftShop = () => {
     }
     `, fetcher
   );
+  
+  const [ selectedProduct, setSelectedProduct ] = useState({
+    color: '',
+    size: ''
+  })
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  console.log('data', data.items.nodes[0]);
+  // click handler for colors and sizes
+  const selectOptions = (option, selected) => {
+    if (option === "color") {
+      setSelectedProduct(prev => ({
+        ...prev,
+        color: selected
+      }))
+    };
+
+    if (option === "size") {
+      setSelectedProduct(prev => ({
+        ...prev,
+        size: selected
+      }))
+    };
+  }
+
+
   const productInfo = data.items.nodes[0];
 
   const colors = productInfo.colors.nodes;
@@ -115,8 +139,15 @@ const GarthsGiftShop = () => {
           displayColor = "bg-slate-700"
       }
       return (
-        <div className="avatar placeholder" key={index}>
-          <div className={`${displayColor} rounded-full w-3`}>
+        <div className="avatar placeholder" key={index} onClick={() => selectOptions("color", color.name)}>
+          <div className={`
+            ${displayColor} 
+            mr-2 mt-1 rounded-full w-3 
+            ${
+              selectedProduct.color === color.name
+                ? "ring ring-primary ring-offset-base-100 ring-offset-2" 
+                : ""
+            }`}>
             <span className="text-xs"></span>
           </div>
         </div>
@@ -132,10 +163,17 @@ const GarthsGiftShop = () => {
   if (sizes.length > 0) {
     sizeOptions = sizes.map((size, index) => {
       return (
-        <div key={index} className="badge mr-1 cursor-pointer">{size.name}</div>
+        <div key={index} className={`
+          badge mr-2 cursor-pointer
+          ${
+            selectedProduct.size === size.name
+              ? "ring ring-primary ring-offset-base-100 ring-offset-2" 
+              : ""
+          }
+        `} onClick={() => selectOptions("size", size.name)}>{size.name}</div>
       )
     })
-  }
+  };
 
   return (
     <section className="p-5 flex justify-center sm:flex-col md:flex-col lg:flex-row">
@@ -156,8 +194,10 @@ const GarthsGiftShop = () => {
           {sizeOptions}
         </div>
         <div className="font-bold text-4xl my-5">${productInfo.prices.nodes[0].name}</div>
-        <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Send Email</button> 
+        {/* <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Send Email</button>  */}
+        <label htmlFor={productInfo.id} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Check Availability</label>
       </div>
+      <GiftShopModal id={productInfo.id} color={selectedProduct.color} size={selectedProduct.size} name={productInfo.title}/>
     </section>
   )
 }
