@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { request } from 'graphql-request';
 import parse from 'html-react-parser';
+import GiftShopModal from '../../components/GiftShopModal';
 
 const fetcher = (query) => request(process.env.happyHerdApi, query)
   .then((data) => data)
@@ -21,6 +22,7 @@ const GarthsGiftShop = () => {
               name
             }
           }
+          id
           colors {
             nodes {
               name
@@ -59,7 +61,6 @@ const GarthsGiftShop = () => {
 
   // click handler for colors and sizes
   const selectOptions = (option, selected) => {
-    console.log('you selected', option, selected);
     if (option === "color") {
       setSelectedProduct(prev => ({
         ...prev,
@@ -143,10 +144,8 @@ const GarthsGiftShop = () => {
             ${displayColor} 
             mr-2 mt-1 rounded-full w-3 
             ${
-              index === 0 && !selectedProduct.color 
+              selectedProduct.color === color.name
                 ? "ring ring-primary ring-offset-base-100 ring-offset-2" 
-                : selectedProduct.color === color.name
-                ? "ring ring-primary ring-offset-base-100 ring-offset-2"
                 : ""
             }`}>
             <span className="text-xs"></span>
@@ -167,16 +166,14 @@ const GarthsGiftShop = () => {
         <div key={index} className={`
           badge mr-2 cursor-pointer
           ${
-            index === 0 && !selectedProduct.size
-              ? "ring ring-primary ring-offset-base-100 ring-offset-2" 
-              : selectedProduct.size === size.name
+            selectedProduct.size === size.name
               ? "ring ring-primary ring-offset-base-100 ring-offset-2" 
               : ""
           }
         `} onClick={() => selectOptions("size", size.name)}>{size.name}</div>
       )
     })
-  }
+  };
 
   return (
     <section className="p-5 flex justify-center sm:flex-col md:flex-col lg:flex-row">
@@ -197,8 +194,10 @@ const GarthsGiftShop = () => {
           {sizeOptions}
         </div>
         <div className="font-bold text-4xl my-5">${productInfo.prices.nodes[0].name}</div>
-        <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Send Email</button> 
+        {/* <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Send Email</button>  */}
+        <label htmlFor={productInfo.id} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Check Availability</label>
       </div>
+      <GiftShopModal id={productInfo.id} color={selectedProduct.color} size={selectedProduct.size} name={productInfo.title}/>
     </section>
   )
 }
