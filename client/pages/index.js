@@ -11,7 +11,7 @@ function Home({ data }) {
       <Carousel />
       <WhoWeAre data={data}/>
       <HowToHelp />
-      <LatestNews />
+      {/* <LatestNews /> */}
       <Subscribe />
     </>
   )
