@@ -57,10 +57,10 @@ const Carousel = () => {
     return (
       <>
         <img key={item.node.id} src={item.node.sourceUrl} alt={item.node.title} className="w-full h-full imgs object-top"/>
-        <div className="flex flex-col img-content items-start bg-neutral/50 px-20">
-          <h1 className="font-bold text-5xl text-white">{title}</h1>
-          <p className="text-white text-lg font-light mt-1 mb-10">{caption}</p>
-          <button className="btn btn-primary py-1 px-3 sm:btn-sm md:btn-md lg:btn-md">{cta}</button>
+        <div className="flex flex-col img-content items-start bg-neutral/50 px-5 sm:px-5 md:px-5 lg:px-20">
+          <h1 className="font-bold text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">{title}</h1>
+          <p className="text-white text-md font-light mt-1 mb-10 sm:text-md md:text-lg lg:text-lg">{caption}</p>
+          <button className="btn btn-sm btn-primary py-1 px-3 sm:btn-sm md:btn-md lg:btn-md">{cta}</button>
           {
             !moreInfo
             ? <></>
