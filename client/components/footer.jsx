@@ -2,7 +2,7 @@ import { SiFacebook, SiTwitter, SiInstagram } from 'react-icons/si';
 
 const Footer = () => {
   return (
-    <footer className="footer flex justify-between items-center bg-white px-[12rem] py-5">
+    <footer className="footer flex justify-between items-center bg-white px-[3rem] sm:px-[5rem] md:px-[7rem] lg:px-[12rem] py-5">
       <div className="grid grid-flow-col gap-2">
         <a><SiFacebook className="w-4 h-4"/></a> 
         <a><SiInstagram className="w-4 h-4"/></a> 

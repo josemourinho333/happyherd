@@ -63,15 +63,15 @@ const HowToHelp = () => {
   })
 
   return (
-    <section className="flex h-[70vh]">
+    <section className="flex sm:h-auto md:h-auto lg:h-[70vh] flex-col sm:flex-col md:flex-col lg:flex-row">
 
       <div className="basis-1/2 justify-center px-[1rem]">
         {howToHelp}
       </div>
 
       <div className="intro self-center items-start flex flex-col basis-1/2 px-[1rem] text-neutral">
-        <h1 className="text-primary font-semibold text-5xl">How You Can Help</h1>
-        <p className="intro-content my-8 text-neutral">
+        <h1 className="text-primary font-bold text-2xl my-5 sm:text-3xl md:text-4xl lg:text-5xl">How You Can Help</h1>
+        <p className="intro-content my-2 text-neutral">
         As one of the first farm animal sanctuaries on Canada's West Coast,
         we are always seeking assistance through volunteers or donations, monetary or in kind. 
         <br/><br/>
@@ -81,7 +81,7 @@ const HowToHelp = () => {
         <div className="options active border-neutral" data-expandable>
           <h1 id="0" className="text-neutral font-semibold text-2xl" data-expandable-button>Volunteer</h1>
           <p className="text-neutral">Volunteers are critical in running our sanctuary. We have volunteers care for the animals 365 days a year.</p>
-          <button className="btn btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
+          <button className="btn btn-sm btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
             Volunteer
             <HiOutlineArrowRight className="ml-2 mt-0.5"/>
           </button>
@@ -90,7 +90,7 @@ const HowToHelp = () => {
         <div className="options border-neutral" data-expandable>
           <h1 id="1" className="text-neutral font-semibold text-2xl" data-expandable-button>Donate</h1>
           <p>Make a one time or a monthly donation to The Happy Herd.</p>
-          <button className="btn btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
+          <button className="btn btn-sm btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
             Donate
             <HiOutlineArrowRight className="ml-2 mt-0.5"/>
           </button>

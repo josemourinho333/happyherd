@@ -12,15 +12,15 @@ const WhoWeAre = ({ data }) => {
   });
 
   return (
-    <section className="who-we-are-container flex items-center text-neutral">
+    <section className="who-we-are-container flex items-center text-neutral flex-col sm:flex-col md:flex-col lg:flex-row">
       <div className="content-container flex flex-col basis-1/2 px-[1rem]">
-        <h1 className="text-primary font-semibold text-5xl">
+        <h1 className="text-primary font-bold text-2xl my-5 sm:text-3xl md:text-4xl lg:text-5xl">
           The Happy Herd is a <strong>farm animal sanctuary</strong> for animals either abused or at risk.
         </h1>
-        <p className="my-[2rem]">
+        <p className="mb-[2rem]">
           On 4 wonderful acres, you can find the many animals we have rescued roaming freely. We have several goats, sheep, chickens, cows, pigs, turkeys, ducks, cats, a dog, and a wonderful friendly donkey! Each with their <strong>own identity and personality</strong>, you can find out more about them by clicking below. We became official in August 2018, when we became a registered charity.
         </p>
-        <button className="btn btn-primary px-5 py-2 self-start flex align-center sm:btn-sm md:btn-md lg:btn-md">
+        <button className="btn btn-sm btn-primary px-5 py-2 self-start flex align-center sm:btn-sm md:btn-md lg:btn-md">
           Rescued Animals
           <HiOutlineArrowRight className="ml-2 mt-0.5"/>
         </button>
