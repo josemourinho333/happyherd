@@ -6,7 +6,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100 py-4 px-0 justify-center sticky top-0 z-[501] sm:px-[12rem] md:px-[12rem] lg:px-[12rem] sm:justify-between md:justify-between lg:justify-between">
+      <div className="navbar bg-base-100 py-4 px-0 justify-center sticky top-0 z-[501] sm:px-[5rem] md:px-[6rem] lg:px-[12rem] sm:justify-between md:justify-between lg:justify-between">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,8 +19,8 @@ const NavBar = () => {
                 <FiChevronDown />
               </a>
               <ul className="p-2 bg-white">
-                <li><a>Rescued Animals</a></li>
-                <li><a>In Loving Memory</a></li>
+                <li><a href="/rescuedanimals">Rescued Animals</a></li>
+                <li><a href="/inlovingmemory">In Loving Memory</a></li>
               </ul>
             </li>
             <li tabIndex={1}>
@@ -29,10 +29,10 @@ const NavBar = () => {
                 <FiChevronDown />
               </a>
               <ul className="p-2 bg-white">
-                <li><a>Sponsor an Animal</a></li>
-                <li><a>Garth's Gift Shop</a></li>
-                <li><a>Donate</a></li>
-                <li><a>Supporters</a></li>
+                <li><a href="/sponsorananimal">Sponsor an Animal</a></li>
+                <li><a href="/garthsgiftshop">Garth's Gift Shop</a></li>
+                <li><a href="/donate">Donate</a></li>
+                <li><a href="/supporters">Supporters</a></li>
               </ul>
             </li>
             <li><a className="/pigyoga">Pig Yoga</a></li>
@@ -51,9 +51,9 @@ const NavBar = () => {
               Animals
               <FiChevronDown />
             </a>
-            <ul className="p-2 bg-white">
-              <li><a>Rescued Animals</a></li>
-              <li><a>In Loving Memory</a></li>
+            <ul className="p-2 bg-white shadow-xl">
+              <li><a href="/rescuedanimals">Rescued Animals</a></li>
+              <li><a href="/inlovingmemory">In Loving Memory</a></li>
             </ul>
           </li>
           <li tabIndex={1}>
@@ -61,11 +61,11 @@ const NavBar = () => {
               Support Us
               <FiChevronDown />
             </a>
-            <ul className="p-2 bg-white">
-              <li><a>Sponsor an Animal</a></li>
-              <li><a>Garth's Gift Shop</a></li>
-              <li><a>Donate</a></li>
-              <li><a>Supporters</a></li>
+            <ul className="p-2 bg-white shadow-xl">
+              <li><a href="/sponsorananimal">Sponsor an Animal</a></li>
+              <li><a href="/garthsgiftshop">Garth's Gift Shop</a></li>
+              <li><a href="/donate">Donate</a></li>
+              <li><a href="/supporters">Supporters</a></li>
             </ul>
           </li>
           <li><a href="/pigyoga">Pig Yoga</a></li>
@@ -73,7 +73,8 @@ const NavBar = () => {
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
-      <div className="navbar-end w-auto ml-2">
+      <div className="navbar-end max-w-max ml-2">
+        <a className="btn btn-sm btn-neutral mr-1 sm:btn-sm md:btn-sm lg:btn-sm">Book a tour</a>
         <a className="btn btn-sm btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Donate</a>
       </div>
     </div>
