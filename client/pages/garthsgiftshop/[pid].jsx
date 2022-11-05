@@ -193,9 +193,9 @@ const GarthsGiftShop = () => {
         <div className="flex">
           {sizeOptions}
         </div>
-        <div className="font-bold text-4xl my-5">${productInfo.prices.nodes[0].name}</div>
+        <div className="font-bold text-4xl my-5">${productInfo.prices.nodes[0].name} <span className="italic text-base font-normal">+ shipping</span></div>
         {/* <button className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Send Email</button>  */}
-        <label htmlFor={productInfo.id} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Check Availability</label>
+        <label htmlFor={productInfo.id} className="btn btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Contact</label>
       </div>
       <GiftShopModal id={productInfo.id} color={selectedProduct.color} size={selectedProduct.size} name={productInfo.title}/>
     </section>
