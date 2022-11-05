@@ -1,5 +1,5 @@
 import MenuItem from "./menuitem";
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import { FiChevronDown } from "react-icons/fi"
 
 const NavBar = () => {
@@ -31,7 +31,7 @@ const NavBar = () => {
               <ul className="p-2 bg-white">
                 <li><a href="/sponsorananimal">Sponsor an Animal</a></li>
                 <li><a href="/garthsgiftshop">Garth's Gift Shop</a></li>
-                <li><a href="/donate">Donate</a></li>
+                <li><a href="https://donate-can.keela.co/website-donate" target="_blank">Donate <HiOutlineExternalLink /></a></li>
                 <li><a href="/supporters">Supporters</a></li>
               </ul>
             </li>
@@ -64,7 +64,7 @@ const NavBar = () => {
             <ul className="p-2 bg-white shadow-xl">
               <li><a href="/sponsorananimal">Sponsor an Animal</a></li>
               <li><a href="/garthsgiftshop">Garth's Gift Shop</a></li>
-              <li><a href="/donate">Donate</a></li>
+              <li><a href="https://donate-can.keela.co/website-donate" target="_blank">Donate <HiOutlineExternalLink/></a></li>
               <li><a href="/supporters">Supporters</a></li>
             </ul>
           </li>
