@@ -74,7 +74,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end max-w-max ml-2">
-        <a className="btn btn-sm btn-neutral mr-1 sm:btn-sm md:btn-sm lg:btn-sm">Book a tour</a>
+        <a href="/tour" className="btn btn-sm btn-neutral mr-1 sm:btn-sm md:btn-sm lg:btn-sm">Book a tour</a>
         <a className="btn btn-sm btn-primary sm:btn-sm md:btn-sm lg:btn-sm">Donate</a>
       </div>
     </div>
