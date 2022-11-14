@@ -6,21 +6,19 @@ import DayModal from '../components/DayModal';
 
 const Tour = () => {
   const [value, onChange] = useState(new Date());
-  const [clickedDay, setClickedDay] = useState(value.toLocaleDateString());
+  const [clickedDay, setClickedDay] = useState('');
 
   const clickDay = (value) => {
-    console.log('clicked', typeof value.toLocaleDateString("en-US"));
     setClickedDay(value.toLocaleDateString());
   };
 
   useEffect(() => {
-    const modalPointer = document.getElementById(value.toLocaleDateString());
-    if (!modalPointer) {
-      return;
+    if (!clickedDay) {
+      return ;
     } else {
-      document.getElementById(value.toLocaleDateString()).checked = true;
+      document.getElementById(clickedDay).checked = true;
     }
-  }, [value])
+  }, [clickedDay])
 
   return (
     <div className="flex flex-col justify-center items-center">
