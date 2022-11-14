@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Hero from '../components/hero';
@@ -6,12 +6,21 @@ import DayModal from '../components/DayModal';
 
 const Tour = () => {
   const [value, onChange] = useState(new Date());
-  const [clickedDay, setClickedDay] = useState(null);
+  const [clickedDay, setClickedDay] = useState(value.toLocaleDateString());
 
   const clickDay = (value) => {
-    console.log('clicked', value);
-    document.getElementById('my-modal-6').checked = true;
-  }
+    console.log('clicked', typeof value.toLocaleDateString("en-US"));
+    setClickedDay(value.toLocaleDateString());
+  };
+
+  useEffect(() => {
+    const modalPointer = document.getElementById(value.toLocaleDateString());
+    if (!modalPointer) {
+      return;
+    } else {
+      document.getElementById(value.toLocaleDateString()).checked = true;
+    }
+  }, [value])
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -77,7 +86,7 @@ const Tour = () => {
       <div id="tour" className="w-5/6 my-5">
         <Calendar onChange={onChange} value={value} minDate={new Date()} onClickDay={(value) => clickDay(value)}/>
       </div>
-      <DayModal />
+      <DayModal clickedDay={clickedDay}/>
     </div>
   )
 }
