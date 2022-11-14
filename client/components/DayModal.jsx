@@ -1,7 +1,6 @@
 import React from 'react';
 
 const DayModal = ({clickedDay}) => {
-  console.log('inside modal', clickedDay);
   return (
     <>
       <input type="checkbox" id={clickedDay} className="modal-toggle" />
