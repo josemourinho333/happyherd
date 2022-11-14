@@ -1,5 +1,4 @@
 import React from 'react';
-import Hero from '../components/hero';
 import { request } from 'graphql-request';
 import useSWR from 'swr';
 

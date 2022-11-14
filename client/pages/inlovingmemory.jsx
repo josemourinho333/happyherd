@@ -57,7 +57,7 @@ const InLovingMemory = () => {
 
   return (
     <section className="flex flex-col items-center">
-      <Hero title="In Loving Memory" cta="Donate">
+      <Hero title="In Loving Memory" cta="donate">
         Gone but never forgotten. You can help us these animals and enrich their lives.
       </Hero>
       <div className="flex flex-wrap justify-center my-[2rem] gap-[2rem]">

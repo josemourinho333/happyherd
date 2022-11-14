@@ -6,7 +6,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100 py-4 px-0 justify-center sticky top-0 z-[501] sm:px-[5rem] md:px-[6rem] lg:px-[12rem] sm:justify-between md:justify-between lg:justify-between">
+      <div className="navbar bg-blue-200 py-5 px-0 justify-center sticky top-0 z-[501] sm:px-[5rem] md:px-[6rem] lg:px-[12rem] sm:justify-between md:justify-between lg:justify-between">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,8 +40,8 @@ const NavBar = () => {
             <li><a className="/contact">Contact</a></li>
           </ul>
         </div>
-        <a className="btn btn-ghost p-0" href="/">
-          <img src="https://happyherd.org/wp-content/uploads/2017/12/TheHappyHerd-Logo.png" alt="logo" className="logo-img w-[125px]" />
+        <a className="btn btn-ghost p-0 content-center" href="/">
+          <img src="https://happyherd.org/wp-content/uploads/2017/12/TheHappyHerd-Logo.png" alt="logo" className="logo-img w-[115px]" />
         </a>
       </div>
       <div className="navbar-end hidden text-md lg:flex">
