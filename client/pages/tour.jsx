@@ -10,11 +10,16 @@ const Tour = () => {
 
   const clickDay = (value) => {
     setClickedDay(value.toLocaleDateString());
+
+    if (clickedDay === value.toLocaleDateString()) {
+      document.getElementById(clickedDay).classList.remove('open-modal');
+      document.getElementById(clickedDay).checked = true;
+    }
   };
 
   useEffect(() => {
     if (!clickedDay) {
-      return ;
+      return;
     } else {
       document.getElementById(clickedDay).checked = true;
     }
