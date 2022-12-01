@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <NavBar />
-      <main className="w-[75%] m-auto">
+      <main>
         { children }
       </main>
       <Footer />
