@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const DayModal = ({clickedDay}) => {
-  const [open, setOpen] = useState(false);
-  
-  // useEffect(() => {
-  //   if (document.)
-  // }, [])
 
   return (
     <>
