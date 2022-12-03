@@ -1,36 +1,37 @@
-import styles from '../styles/WhoWeAre.module.scss';
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { HiChevronRight } from "react-icons/hi";
+import CardNew from './CardNew';
 
+const WhoWeAre = ({ aboutItems }) => {
 
-const WhoWeAre = ({ data }) => {
-  const imgs = data.mediaItems?.edges?.map((img) => {
+  const aboutSections = aboutItems.reverse().map((about, index) => {
+    const info = about.content.raw.split('/')[0];
+    const cta = about.content.raw.split('/')[1];
+    const extra = about.content.raw.split('/')[2];
+
     return (
-      <div className="context-img-container" key={img.node.id}>
-        <img src={img.node.sourceUrl} alt="..." className="w-full context-img rounded-xl shadow-2xl" />
+      <div key={about.id} className={`flex flex-col min-h-screen ${index % 2 === 0 ? "bg-base-100" : "bg-zinc-100/70"} justify-center items-center text-center py-10 px-8 gap-y-5`}>
+        <div className="basis-1/2 flex flex-col gap-y-5 w-4/5 lg:w-3/5">
+          <h2 className="text-6xl font-semibold">{about.title.raw}</h2>
+          <p className="text-lg font-light">{info}</p>
+          {
+            !cta
+              ? <></>
+              : <div className="flex flex-col justify-center items-center text-lg md:flex-row ">
+                  <a to="/projects" className="text-[#2997ff] flex items-center m-2">{cta}<HiChevronRight className="pt-0.5 w-5 h-5"/></a>
+                </div>
+          }
+        </div>
+        <CardNew src={about._embedded["wp:featuredmedia"][0].source_url}/>
+        <p className="text-xs italic">{extra ? extra : ''}</p>
+
       </div>
     )
   });
 
   return (
-    <section className="who-we-are-container flex items-center text-neutral flex-col sm:flex-col md:flex-col lg:flex-row">
-      <div className="content-container flex flex-col basis-1/2 px-[1rem]">
-        <h1 className="text-primary font-bold text-2xl my-5 sm:text-3xl md:text-4xl lg:text-5xl">
-          The Happy Herd is a <strong>farm animal sanctuary</strong> for animals either abused or at risk.
-        </h1>
-        <p className="mb-[2rem]">
-          On 4 wonderful acres, you can find the many animals we have rescued roaming freely. We have several goats, sheep, chickens, cows, pigs, turkeys, ducks, cats, a dog, and a wonderful friendly donkey! Each with their <strong>own identity and personality</strong>, you can find out more about them by clicking below. We became official in August 2018, when we became a registered charity.
-        </p>
-        <button className="btn btn-sm btn-primary px-5 py-2 self-start flex align-center sm:btn-sm md:btn-md lg:btn-md">
-          Rescued Animals
-          <HiOutlineArrowRight className="ml-2 mt-0.5"/>
-        </button>
-      </div>
-
-      <div className={`${styles["context-imgs"]} py-[3rem] px-[1rem] basis-1/2`}>
-        {imgs}
-      </div>
-
-    </section>
+    <>
+      {aboutSections}
+    </>
   )
 };
 

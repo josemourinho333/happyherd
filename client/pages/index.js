@@ -3,36 +3,42 @@ import WhoWeAre from '../components/whoweare';
 import HowToHelp from '../components/howtohelp';
 import LatestNews from '../components/latestnews';
 import Subscribe from '../components/subscribe';
-import {request} from 'graphql-request';
+import HomeHero from '../components/HomeHero';
+import axios from '../components/Axios';
+import { subscribe } from 'graphql';
 
-function Home({ data }) {
+function Home({ heroItems, aboutItems, helpItems, subscribeItems }) {
   return (
-    <>
-      <Carousel />
-      <WhoWeAre data={data}/>
-      <HowToHelp />
+    <> 
+      <HomeHero heroItems={heroItems}/>
+      <WhoWeAre aboutItems={aboutItems}/>
+      <HowToHelp helpItems={helpItems}/>
       {/* <LatestNews /> */}
-      <Subscribe />
+      <Subscribe subscribeItems={subscribeItems[0]}/>
     </>
   )
 };
 
-export async function getServerSideProps() {
-  const query = `{
-    mediaItems(where: {title: "whoweare"}) {
-      edges {
-        node {
-          id
-          sourceUrl
-        }
+export async function getStaticProps() {
+  try {
+    const [hero, about, help, subscribe] = await Promise.all([
+      axios.get('/hero-items', { params: {context: "edit", _embed: true}}),
+      axios.get('/about-items', { params: {context: "edit", _embed: true}}),
+      axios.get('/help-items', {params: {context: "edit", _embed: true}}),
+      axios.get('/subscribe-items', {params: {context: "edit", _embed: true}})
+    ])
+
+    return {
+      props: {
+        heroItems: hero.data,
+        aboutItems: about.data,
+        helpItems: help.data,
+        subscribeItems: subscribe.data
       }
     }
-  }`;
-
-  const res = await request(process.env.happyHerdApi, query);
-  const data = await res;
-
-  return { props: { data } };
+  } catch (error) {
+    console.log('error', error);
+  }
 };
 
 export default Home;

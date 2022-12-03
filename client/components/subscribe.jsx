@@ -1,55 +1,85 @@
-import useSWR from 'swr';
-import { request } from 'graphql-request';
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { useState, useRef } from 'react';
+import axios from 'axios';
 
+const Subscribe = ({subscribeItems}) => {
+  const [result, setResult] = useState('');
+  const inputRef = useRef('');
 
-const fetcher = (query) => request(process.env.happyHerdApi, query)
-  .then((data) => data)
-  .catch((err) => console.log('err', err));
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log('submit button clicked');
+    console.log('inputref', inputRef.current.value); 
 
-const Subscribe = () => {
-  const { data, error } = useSWR(
-  `
-  {
-    mediaItems(where: {title: "subscribe"}) {
-      nodes {
-        sourceUrl(size: LARGE)
-        id
-        title(format: RENDERED)
-      }
-    }
-  }
-  `, fetcher);
+    const apiEndpoint = process.env.NEXT_API_URL + "/api/subscribeUser";
 
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+    axios.post(apiEndpoint, {
+      email: inputRef.current.value
+    })
+    .then((res) => {
+      console.log('res', res);
+      setResult(err.response.data.title);
+    })
+    .catch((err) => {
+      console.log('err', err);
+      setResult(err.response.data.title);
+    })
+  };
 
-  console.log('data', data.mediaItems.nodes[0].sourceUrl);
-
-  const src = data.mediaItems.nodes[0].sourceUrl;
+  console.log('sub', subscribeItems);
 
   return (
-    <div className="hero min-h-[70vh] bg-neutral rounded-lg my-8">
-      <div className="hero-content flex-col gap-10 max-w-[14rem] sm:max-w-max md:max-w-max lg:max-w-max lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">Stay Connected</h1>
-          <p className="py-6 text-neutral-content">Sign up for our newsletter and stay up to date with the Happy Herd.</p>
-        </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
-          <div className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input type="text" placeholder="email" className="input input-xs sm:input-md md:input-md lg:input-md input-bordered" />
-            </div>
-            <div className="form-control mt-6">
-              <button className="btn btn-sm btn-primary sm:btn-sm md:btn-md lg:btn-md">Subscribe</button>
-            </div>
+    <div className="hero min-h-screen" style={{ backgroundImage: `url(${subscribeItems._embedded["wp:featuredmedia"][0].source_url})` }}>
+      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-content text-center text-neutral-content">
+        <div className="max-w-md">
+          <h1 className="mb-5 text-6xl font-bold">{subscribeItems.title.raw}</h1>
+          <p className="mb-5 text-2xl">{subscribeItems.content.raw}</p>
+          <p className="mb-5">Test Result: {result}</p>
+          <div className="w-full flex flex-col">
+              <input 
+              type="email" 
+              id="email-input"
+              name="email"
+              placeholder="Enter your email"
+              ref={inputRef}
+              required
+              autoCapitalize='off'
+              autoCorrect='off'
+              className="text-neutral input input-bordered"
+            />
+            <button onClick={submitHandler} value={inputRef} name="subscribe" className="btn btn-primary mt-5 self-center">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
     </div>
+    // <div className="flex flex-col lg:flex-row min-h-[70vh] bg-gradient-to-b from-black to-zinc-800 text-neutral-content">
+    //   <div>
+    //    Result: {result}
+    //   </div>
+      // <div>
+      //   <form>
+      //     <label htmlFor="email-input">
+      //       Your Email
+      //     </label>
+      //     <input 
+      //       type="email" 
+      //       id="email-input"
+      //       name="email"
+      //       placeholder="Enter your email"
+      //       ref={inputRef}
+      //       required
+      //       autoCapitalize='off'
+      //       autoCorrect='off'
+      //       className="text-neutral"
+      //     />
+      //   </form>
+      //   <button onClick={submitHandler} value={inputRef} name="subscribe">
+      //     Subscribe
+      //   </button>
+      // </div>
+    // </div>
   )
 }
 

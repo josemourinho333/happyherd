@@ -5,7 +5,7 @@ import { FiChevronDown } from "react-icons/fi"
 const NavBar = () => {
 
   return (
-    <div className="navbar bg-base-100/80 backdrop-blur-lg sticky top-0 p-0 h-[10vh]">
+    <div className="navbar bg-base-100/70 backdrop-blur-lg sticky top-0 p-0 h-[10vh] z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li tabIndex={0}>
-            <a className="items-center font-semibold">
+            <a className="items-center">
               Animals
               <FiChevronDown />
             </a>
@@ -41,7 +41,7 @@ const NavBar = () => {
             </ul>
           </li>
           <li tabIndex={1}>
-            <a className="items-center font-semibold">
+            <a className="items-center">
               Support Us
               <FiChevronDown />
             </a>
@@ -52,9 +52,9 @@ const NavBar = () => {
               <li><a href="/supporters">Supporters</a></li>
             </ul>
           </li>
-          <li><a href="/pigyoga" className="font-semibold">Pig Yoga</a></li>
-          <li><a href="/volunteer" className="font-semibold">Volunteer</a></li>
-          <li><a href="/contact" className="font-semibold">Contact</a></li>
+          <li><a href="/pigyoga">Pig Yoga</a></li>
+          <li><a href="/volunteer">Volunteer</a></li>
+          <li><a href="/contact">Contact</a></li>
 
         </ul>
       </div>

@@ -1,103 +1,44 @@
-import {request} from 'graphql-request';
-import { useEffect } from 'react';
-import useSWR from 'swr';
-import { HiOutlineArrowRight } from "react-icons/hi";
+import ContentCard from "./ContentCard";
 
-const fetcher = (query) => request(process.env.happyHerdApi, query)
-  .then((data) => data)
-  .catch((err) => console.log('err', err));
+const HowToHelp = ({ helpItems }) => {
 
-const HowToHelp = () => {
-  const { data, error } = useSWR(`
-  {
-    mediaItems(where: {title: "howtohelp"}) {
-      edges {
-        node {
-          id
-          sourceUrl
-          altText
-          caption(format: RENDERED)
-        }
-      }
+  const helpSections = helpItems.map((help, index) => {
+    let background;
+    let text;
+
+    if (index === 0) {
+      background = "bg-gradient-to-t from-secondary to-primary"
+      text = "text-neutral-content"
     }
-  }
-  `, fetcher);
 
-  useEffect(() => {
-    const handleClick = (e) => {
-      const isExpandable = e.target.matches("[data-expandable-button]");
-      
-      // clicking inside while expanded won't do anything
-      if (!isExpandable && e.target.closest("[data-expandable]") != null) {
-        return;
-      };
-
-      let currentExpanded
-      if (isExpandable) {
-        currentExpanded = e.target.closest("[data-expandable]");
-        currentExpanded.classList.toggle('active');
-      };
-
-      document.querySelectorAll("[data-expandable].active").forEach(expandable => {
-        if (expandable === currentExpanded) return;
-        expandable.classList.remove('active');
-      })
-    };
-
-    document?.addEventListener('click', handleClick);
-
-    return () => {
-      document?.removeEventListener('click', handleClick);
-    }
-  }, [])
-
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-
-  const howToHelp = data?.mediaItems.edges.map((item, index) => {
     if (index === 1) {
-      return(
-        <img id={index} key={item.node.id} src={item.node.sourceUrl} className="object-cover w-full h-full rounded-xl" />
-      )
+      background = "bg-gradient-to-br from-info to-accent"
+      text = "text-neutral-content"
     }
+
+    if (index === 2) {
+      background = "bg-gradient-to-br from-gray-700 to-black"
+    }
+
+    return (
+      <ContentCard
+        key={help.id}
+        title={help.title}
+        content={help.content}
+        bg={background}
+        textColor={text}
+        index={index}
+      />
+    )
   })
 
   return (
-    <section className="flex sm:h-auto md:h-auto lg:h-[70vh] flex-col sm:flex-col md:flex-col lg:flex-row">
-
-      <div className="basis-1/2 justify-center px-[1rem]">
-        {howToHelp}
+    <div className="bg-base-200">
+      <div className="carousel carousel-center max-w-screen space-x-4 rounded-box bg-inherit p-10">
+        <ContentCard base={true} />
+        {helpSections.reverse()}
       </div>
-
-      <div className="intro self-center items-start flex flex-col basis-1/2 px-[1rem] text-neutral">
-        <h1 className="text-primary font-bold text-2xl my-5 sm:text-3xl md:text-4xl lg:text-5xl">How You Can Help</h1>
-        <p className="intro-content my-2 text-neutral">
-        As one of the first farm animal sanctuaries on Canada's West Coast,
-        we are always seeking assistance through volunteers or donations, monetary or in kind. 
-        <br/><br/>
-        We regularly greet visitors for scheduled tours so people can meet our ever-growing family.
-        </p>
-
-        <div className="options active border-neutral" data-expandable>
-          <h1 id="0" className="text-neutral font-semibold text-2xl" data-expandable-button>Volunteer</h1>
-          <p className="text-neutral">Volunteers are critical in running our sanctuary. We have volunteers care for the animals 365 days a year.</p>
-          <button className="btn btn-sm btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
-            Volunteer
-            <HiOutlineArrowRight className="ml-2 mt-0.5"/>
-          </button>
-        </div>
-
-        <div className="options border-neutral" data-expandable>
-          <h1 id="1" className="text-neutral font-semibold text-2xl" data-expandable-button>Donate</h1>
-          <p>Make a one time or a monthly donation to The Happy Herd.</p>
-          <button className="btn btn-sm btn-primary my-3 sm:btn-sm md:btn-md lg:btn-md">
-            Donate
-            <HiOutlineArrowRight className="ml-2 mt-0.5"/>
-          </button>
-        </div>
-      </div>
-
-    </section>
+    </div>
   )
 };
 
