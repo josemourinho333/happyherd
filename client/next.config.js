@@ -8,14 +8,14 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   env: {
-    happyHerdApi: 'https://happyherd.org/api/graphql',
-    happyHerdBaseURL: 'https://happyherd.org/wp-json/wp/v2',
-    username: 'happyherd',
-    applicationPassword: 'Vlur AaWl 73NQ PswA A5uS VtWv',
-    MAILCHIMP_API_KEY: 'fc7b4b0fcb68bd109f092b8fd8d2e68b-us13',
-    MAILCHIMP_API_SERVER: 'us13',
-    MAILCHIMP_AUDIENCE_ID: 'd43ead7de5',
-    NEXT_API_URL: 'http://localhost:3000'
+    happyHerdApi: process.env.happyHerdApi,
+    happyHerdBaseURL: process.env.happyHerdBaseURL,
+    username: process.env.username,
+    applicationPassword: process.env.applicationPassword,
+    MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY,
+    MAILCHIMP_API_SERVER: process.env.MAILCHIMP_API_SERVER,
+    MAILCHIMP_AUDIENCE_ID: process.env.MAILCHIMP_AUDIENCE_ID,
+    NEXT_API_URL: process.env.NEXT_API_URL
   },
 }
 
