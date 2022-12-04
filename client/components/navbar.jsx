@@ -1,11 +1,10 @@
-import MenuItem from "./menuitem";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { FiChevronDown } from "react-icons/fi"
 
 const NavBar = () => {
 
   return (
-    <div className="navbar bg-base-100/70 backdrop-blur-lg sticky top-0 p-0 h-[10vh] z-50">
+    <div id="navbar" className={`navbar bg-base-100/70 backdrop-blur-lg sticky top-0 p-0 h-[10vh] z-50`}>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

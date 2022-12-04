@@ -7,7 +7,11 @@ const Hero = ({title, children, cta, path}) => {
       <div className="w-4/5 sm:w-2/4 self-center">
         <h1 className="text-5xl font-bold">{title}</h1>
         <p className="text-3xl text-gray-500 mt-5">{children}</p>
-        <a to={path} className={`text-[#2997ff] flex items-center mt-5 text-xl`}>{cta}<HiChevronRight className="pt-0.5 w-5 h-5"/></a>
+        {
+          cta
+          ? <a to={path} className={`text-[#2997ff] flex items-center mt-5 text-xl`}>{cta}<HiChevronRight className="pt-0.5 w-5 h-5"/></a>
+          : <></>
+        }
       </div>
     </div>
   )

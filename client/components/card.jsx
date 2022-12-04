@@ -4,6 +4,8 @@ import { makeSingular } from '../helpers/makeSingular';
 const Card = ({base, id, title, content, img, category, dead}) => {
     return (
       <>
+        {/* <a href={`/rescuedanimals/${id}`}> */}
+        <label htmlFor={`my-modal-${title}`} className="cursor-pointer">
         <div className="carousel-item">
           <div className={`card h-[30rem] ${base ? "opacity-0 bg-transparent shadow-none w-0 sm:w-[7rem] md:w-[10rem] lg:w-[12rem] xl:w-[20rem] 2xl:w-[28rem]" : `bg-base-100 shadow-lg w-[22rem] md:w-[26rem] lg:w-[30rem]`} rounded-lg`} style={{backgroundImage: "url("+ img + ")", backgroundSize: '110% 30rem', backgroundRepeat: 'no-repeat', backgroundPosition: 'top center'}}>
             {
@@ -29,6 +31,8 @@ const Card = ({base, id, title, content, img, category, dead}) => {
             }
           </div>
         </div>
+        </label>
+        {/* </a> */}
         {
           base
             ? <></>

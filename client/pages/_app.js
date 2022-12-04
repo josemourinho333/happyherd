@@ -12,6 +12,13 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <style jsx global>
+          {`
+            #__next {
+              position: relative;
+            }
+          `}
+        </style>
     </>
   )
 }
