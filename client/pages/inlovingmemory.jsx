@@ -33,26 +33,4 @@ const InLovingMemory = ({animals}) => {
   )
 };
 
-export async function getStaticProps() {
-  try {
-    const response = await axios.get('/animals', { 
-      params: {
-        context: "edit", 
-        _embed: true,
-        per_page: 100
-      }
-    });
-
-    const animals = await response.data;
-
-    return {
-      props: {
-        animals
-      }
-    }
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-
 export default InLovingMemory;

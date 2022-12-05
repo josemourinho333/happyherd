@@ -4,7 +4,7 @@ const Volunteer = () => {
 
   return (
     <section className="flex flex-col items-center">
-      <Hero title="Volunteer at the Happy Herd" cta="volunteer">
+      <Hero title="Volunteer at the Happy Herd">
         We would love to have you. The more organized we are and the more commitment we have from our amazing volunteers, the better the experience will be for you and for the animals. They also enjoy seeing the same, familiar faces and love to bond with volunteers that can commit to a specific schedule.
       </Hero>
 
