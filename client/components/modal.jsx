@@ -1,8 +1,14 @@
 import React from 'react';
+import Script from 'next/script';
 
 const Modal = ({name, bio, img, slug, dead}) => {
+
   return (
     <>
+      <Script async type="text/javascript" src="https://d3n6by2snqaq74.cloudfront.net/forms/keela-forms.min.js"/>
+      <Script async>{` 
+          window.Keela = { id: "zgBpP6eQ2D3ApCQEy"};
+      `}</Script>
       <input type="checkbox" id={`my-modal-${slug}`} className="modal-toggle" />
       <div className="!ml-0 modal modal-bottom sm:modal-middle">
         <div className="modal-box relative !p-0">
@@ -18,13 +24,17 @@ const Modal = ({name, bio, img, slug, dead}) => {
               <div className="text-3xl font-bold mt-2">{name}</div>
             </div>
           </div>
+          
           <div className="p-[1.5rem] flex flex-col">
             <div className="py-4">{bio}</div>
             {dead
               ? <></>
-              : <button className="btn btn-primary py-4 sm:btn-sm md:btn-md lg:btn-md">Sponsor {name}</button>
+              : <div className="keela-embed-form" data-src="https://give-can.keela.co/embed/S2K755sDi4FsY28wB">
+                    <div className="keela-loading"><div></div><div></div><div></div><div></div></div>
+                </div>
             }
           </div>
+          
         </div>
       </div>
     </>

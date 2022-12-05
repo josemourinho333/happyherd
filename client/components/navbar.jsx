@@ -12,11 +12,10 @@ const NavBar = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-2 py-2 px-7 shadow bg-base-100 w-screen inset-x-0 h-[50vh] overflow-y-auto flex-nowrap">
             <li className="border-b my-3"><a className="text-lg font-semibold">Book a Tour</a></li>
+            <li className="border-b my-3"><a className="text-lg font-semibold">Donate</a></li>
             <li className="border-b my-3"><a className="text-lg font-semibold">Rescued Animals</a></li>
             <li className="border-b my-3"><a className="text-lg font-semibold">In Loving Memory</a></li>
-            <li className="border-b my-3"><a className="text-lg font-semibold">Sponsor an Animal</a></li>
             <li className="border-b my-3"><a className="text-lg font-semibold">Garth's Gift Shop</a></li>
-            <li className="border-b my-3"><a className="text-lg font-semibold">Donate</a></li>
             <li className="border-b my-3"><a className="text-lg font-semibold">Pig Yoga</a></li>
             <li className="border-b my-3"><a className="text-lg font-semibold">Volunteer</a></li>
             <li className="border-b my-3"><a className="text-lg font-semibold">Contact</a></li>
@@ -45,9 +44,8 @@ const NavBar = () => {
               <FiChevronDown />
             </a>
             <ul className="p-2 bg-white shadow-xl">
-              <li><a href="/sponsorananimal">Sponsor an Animal</a></li>
+              <li><a href="/donate">Donate</a></li>
               <li><a href="/garthsgiftshop">Garth's Gift Shop</a></li>
-              <li><a href="https://donate-can.keela.co/website-donate" target="_blank">Donate <HiOutlineExternalLink/></a></li>
               <li><a href="/supporters">Supporters</a></li>
             </ul>
           </li>
