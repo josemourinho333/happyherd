@@ -19,26 +19,4 @@ function Home({ heroItems, aboutItems, helpItems, subscribeItems }) {
   )
 };
 
-// export async function getStaticProps() {
-//   try {
-//     const [hero, about, help, subscribe] = await Promise.all([
-//       axios.get('/hero-items', { params: {context: "edit", _embed: true}}),
-//       axios.get('/about-items', { params: {context: "edit", _embed: true}}),
-//       axios.get('/help-items', {params: {context: "edit", _embed: true}}),
-//       axios.get('/subscribe-items', {params: {context: "edit", _embed: true}})
-//     ])
-
-//     return {
-//       props: {
-//         heroItems: hero.data,
-//         aboutItems: about.data,
-//         helpItems: help.data,
-//         subscribeItems: subscribe.data
-//       }
-//     }
-//   } catch (error) {
-//     console.log('error', error);
-//   }
-// };
-
 export default Home;
