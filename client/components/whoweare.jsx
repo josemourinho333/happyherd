@@ -9,7 +9,7 @@ const WhoWeAre = ({ aboutItems }) => {
     const extra = about.content.raw.split('/')[2];
 
     return (
-      <div key={about.id} className={`min-h-screen ${index % 2 === 0 ? "bg-gradient-to-br from-primary to-info" : "bg-zinc-100/70"} text-primary-content flex justify-center items-center py-20`}>
+      <div key={about.id} className={`min-h-screen ${index % 2 === 0 ? "bg-gradient-to-br from-black to-zinc-900" : "bg-zinc-100/70"} text-primary-content flex justify-center items-center py-20`}>
         <div className="flex flex-col gap-y-5 items-center text-center w-11/12 sm:w-10/12 md:w-2/3 lg:w-1/2">
           <h2 className="text-3xl sm:text-6xl font-extrabold">{about.title.raw}</h2>
           <p className="text-base sm:text-xl font-normal">{info}</p>

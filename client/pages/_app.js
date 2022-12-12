@@ -10,7 +10,7 @@ function MyApp({
     aboutItems,
     helpItems,
     subscribeItems,
-    animals,
+    allAnimals,
     items,
   }) {
     return (
@@ -26,7 +26,7 @@ function MyApp({
             aboutItems={aboutItems}
             helpItems={helpItems}
             subscribeItems={subscribeItems}
-            animals={animals}
+            allAnimals={allAnimals}
             items={items}
           />
         </Layout>
@@ -76,7 +76,7 @@ MyApp.getInitialProps = async ({ Component, ctx}) => {
       aboutItems: about.data,
       helpItems: help.data,
       subscribeItems: subscribe.data,
-      animals: animalsData.data,
+      allAnimals: animalsData.data,
       items: itemsData.data,
     }
   } catch (error) {
