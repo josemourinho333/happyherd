@@ -7,17 +7,17 @@ const HowToHelp = ({ helpItems }) => {
     let text;
 
     if (index === 0) {
-      background = "bg-gradient-to-t from-secondary to-primary"
+      background = "bg-gradient-to-tl from-info to-success"
       text = "text-neutral-content"
     }
 
     if (index === 1) {
-      background = "bg-gradient-to-br from-info to-accent"
+      background = "bg-gradient-to-br from-error to-warning"
       text = "text-neutral-content"
     }
 
     if (index === 2) {
-      background = "bg-gradient-to-br from-gray-700 to-black"
+      background = "bg-gradient-to-b from-primary to-secondary"
     }
 
     return (
@@ -33,9 +33,9 @@ const HowToHelp = ({ helpItems }) => {
   })
 
   return (
-    <div className="bg-base-200">
-      <div className="carousel carousel-center max-w-screen space-x-4 rounded-box bg-inherit p-10">
-        <ContentCard base={true} />
+    <div className="bg-base-100">
+      <div className="carousel carousel-center max-w-screen space-x-5 rounded-box bg-inherit py-10 px-5 2xl:justify-center">
+        {/* <ContentCard base={true} /> */}
         {helpSections.reverse()}
       </div>
     </div>
