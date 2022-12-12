@@ -28,14 +28,16 @@ const Subscribe = ({subscribeItems}) => {
   console.log('sub', subscribeItems);
 
   return (
-    <div className="hero min-h-screen" style={{ backgroundImage: `url(${subscribeItems._embedded["wp:featuredmedia"][0].source_url})` }}>
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-6xl font-bold">{subscribeItems.title.raw}</h1>
-          <p className="mb-5 text-2xl">{subscribeItems.content.raw}</p>
-          <p className="mb-5">Test Result: {result}</p>
-          <div className="w-full flex flex-col">
+    <div className="hero min-h-[40vh]" style={{ backgroundImage: `url(${subscribeItems._embedded["wp:featuredmedia"][0].source_url})`, backgroundPosition: "50% 15%" }}>
+      <div className="hero-overlay bg-opacity-40"></div>
+      <div className="hero-content text-center lg:text-left text-neutral-content justify-between w-full flex-col lg:flex-row">
+        <div className="flex flex-col gap-y-5">
+          <h1 className="text-4xl sm:text-6xl font-bold">{subscribeItems.title.raw}</h1>
+          <p className="text-xl sm:text-2xl">{subscribeItems.content.raw}</p>
+          <p className="">Test Result: {result}</p>
+        </div>
+
+          <div className="flex flex-row items-center">
               <input 
               type="email" 
               id="email-input"
@@ -45,41 +47,14 @@ const Subscribe = ({subscribeItems}) => {
               required
               autoCapitalize='off'
               autoCorrect='off'
-              className="text-neutral input input-bordered"
+              className="text-neutral input input-sm md:input-md lg:input-lg input-bordered rounded-r-none"
             />
-            <button onClick={submitHandler} value={inputRef} name="subscribe" className="btn btn-primary mt-5 self-center">
-              Subscribe
-            </button>
+              <button onClick={submitHandler} value={inputRef} name="subscribe" className="btn btn-primary btn-sm md:btn-md lg:btn-lg self-center rounded-l-none">
+                Subscribe
+              </button>
           </div>
-        </div>
       </div>
     </div>
-    // <div className="flex flex-col lg:flex-row min-h-[70vh] bg-gradient-to-b from-black to-zinc-800 text-neutral-content">
-    //   <div>
-    //    Result: {result}
-    //   </div>
-      // <div>
-      //   <form>
-      //     <label htmlFor="email-input">
-      //       Your Email
-      //     </label>
-      //     <input 
-      //       type="email" 
-      //       id="email-input"
-      //       name="email"
-      //       placeholder="Enter your email"
-      //       ref={inputRef}
-      //       required
-      //       autoCapitalize='off'
-      //       autoCorrect='off'
-      //       className="text-neutral"
-      //     />
-      //   </form>
-      //   <button onClick={submitHandler} value={inputRef} name="subscribe">
-      //     Subscribe
-      //   </button>
-      // </div>
-    // </div>
   )
 }
 
