@@ -25,8 +25,6 @@ const Subscribe = ({subscribeItems}) => {
     })
   };
 
-  console.log('sub', subscribeItems);
-
   return (
     <div className="hero min-h-[40vh]" style={{ backgroundImage: `url(${subscribeItems._embedded["wp:featuredmedia"][0].source_url})`, backgroundPosition: "50% 15%" }}>
       <div className="hero-overlay bg-opacity-40"></div>
