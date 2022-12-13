@@ -80,7 +80,7 @@ MyApp.getInitialProps = async ({ Component, ctx}) => {
       items: itemsData.data,
     }
   } catch (error) {
-    console.log('error', error.response.data);
+    console.log('error', error);
   }
 };
 

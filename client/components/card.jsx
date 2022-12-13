@@ -5,7 +5,7 @@ const Card = ({base, id, title, content, img, category, dead, price, item, color
 
     if (item) {
       return (
-        <a href={`/garthsgiftshop/${title}`}>
+        <a href={`/giftshop/${title}`}>
           <div className="carousel-item">
             <div className={`card h-[30rem] ${base ? "opacity-0 bg-transparent shadow-none w-0 sm:w-[7rem] md:w-[10rem] lg:w-[12rem] xl:w-[20rem] 2xl:w-[28rem]" : `bg-base-100 shadow-lg w-[16rem] md:w-[20rem] lg:w-[20rem]`} rounded-lg`}>
               {
@@ -39,7 +39,7 @@ const Card = ({base, id, title, content, img, category, dead, price, item, color
         {/* <a href={`/rescuedanimals/${id}`}> */}
         <label htmlFor={`my-modal-${title}`} className="cursor-pointer">
         <div className="carousel-item">
-          <div className={`card h-[30rem] ${base ? "opacity-0 bg-transparent shadow-none w-0 sm:w-[7rem] md:w-[10rem] lg:w-[12rem] xl:w-[20rem] 2xl:w-[28rem]" : `bg-base-100 shadow-lg w-[22rem] md:w-[26rem] lg:w-[30rem]`} rounded-lg`} style={{backgroundImage: "url("+ img + ")", backgroundSize: '110% 30rem', backgroundRepeat: 'no-repeat', backgroundPosition: 'top center'}}>
+          <div className={`card ${base ? "opacity-0 bg-transparent shadow-none w-0 sm:w-[7rem] md:w-[10rem] lg:w-[12rem] xl:w-[20rem] 2xl:w-[28rem]" : `bg-base-100 shadow-lg w-full`} rounded-lg`} style={{backgroundImage: "url("+ img + ")", backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top center'}}>
             {
               base
                 ? <></>
