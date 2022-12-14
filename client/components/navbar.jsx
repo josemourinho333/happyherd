@@ -43,8 +43,8 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end py-[1rem] px-5 gap-2">
-        <a className="btn btn-primary btn-sm normal-case hidden lg:flex">Book a Tour</a>
-        <a className="btn btn-primary btn-sm normal-case hidden lg:flex">Donate</a>
+        <a href="/tour" className="btn btn-primary btn-sm normal-case hidden lg:flex">Book a Tour</a>
+        <a href="/donate" className="btn btn-primary btn-sm normal-case hidden lg:flex">Donate</a>
       </div>
     </div>
     </>
