@@ -5,6 +5,7 @@ const HowToHelp = ({ helpItems }) => {
   const helpSections = helpItems.map((help, index) => {
     let background;
     let text;
+    let disabled = false;
 
     if (index === 0) {
       background = "bg-gradient-to-tl from-info to-success"
@@ -18,6 +19,7 @@ const HowToHelp = ({ helpItems }) => {
 
     if (index === 2) {
       background = "bg-gradient-to-b from-primary to-secondary"
+      disabled=true;
     }
 
     return (
@@ -28,6 +30,8 @@ const HowToHelp = ({ helpItems }) => {
         bg={background}
         textColor={text}
         index={index}
+        slug={help.slug}
+        disabled={disabled}
       />
     )
   })
@@ -35,7 +39,6 @@ const HowToHelp = ({ helpItems }) => {
   return (
     <div className="bg-base-100">
       <div className="carousel carousel-center max-w-screen space-x-5 rounded-box bg-inherit py-10 px-5 2xl:justify-center">
-        {/* <ContentCard base={true} /> */}
         {helpSections.reverse()}
       </div>
     </div>

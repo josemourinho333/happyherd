@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from '../components/Axios';
-import Hero from '../components/hero';
+import HeroCard from '../components/HeroCard';
 
 const Supporters = ({supporterItems}) => {
 
@@ -13,21 +13,25 @@ const Supporters = ({supporterItems}) => {
   });
 
   return (
-    <section className="grid grid-cols-1 p-4 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 bg-primary-content">
-      <div className="after:content relative col-span-1 row-span-1 flex flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-accent px-6 pb-16 pt-64 text-center text-white shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight sm:col-span-2 md:col-span-4 md:row-span-1 lg:col-span-5 lg:row-span-1 xl:col-span-6 lg:pt-0">
-        <h1 className="mt-8 mb-4 text-3xl font-bold uppercase tracking-widest">
-          Supporters
-        </h1>
-        <p className="max-w-[40ch] text-white/75 sm:max-w-[32ch]">
-          The Happy Herd is very lucky to have so many amazing supporters, including local businesses, vegan companies and other animal rescues. Thank you as well to individual contributors, we greatly appreciate your support!
-        </p>
-        <a
-          className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
-          href="/donate"
-        >
-          Donate
-        </a>
-      </div>
+    <section className="grid grid-cols-2 p-4 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 bg-primary-content">
+      <HeroCard 
+        title="Supporters" 
+        cta="Donate" 
+        path="/donate"
+        defCol={2}
+        defRow=""
+        smCol="sm:col-start-1 sm:col-end-4"
+        smRow=""
+        mdCol="md:col-start-1 md:col-end-5"
+        mdRow=""
+        lgCol="lg:col-start-1 lg:col-end-6"
+        lgRow=""
+        xlCol="xl:col-start-1 xl:col-end-7"
+        xlRow=""
+      >
+        The Happy Herd is very lucky to have so many amazing supporters, including local businesses, vegan companies and other animal rescues. Thank you as well to individual contributors, we greatly appreciate your support!
+      </HeroCard>
+      
       {allSupporters.reverse()}
     </section>
   )

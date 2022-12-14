@@ -13,7 +13,6 @@ function Home({ heroItems, aboutItems, helpItems, subscribeItems }) {
       <HomeHero heroItems={heroItems}/>
       <WhoWeAre aboutItems={aboutItems}/>
       <HowToHelp helpItems={helpItems}/>
-      {/* <LatestNews /> */}
       <Subscribe subscribeItems={subscribeItems[0]}/>
     </>
   )

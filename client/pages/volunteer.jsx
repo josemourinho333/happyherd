@@ -27,7 +27,7 @@ const Volunteer = () => {
         </div>
       </div>
 
-      <div className="alert alert-info shadow-lg flex flex-col w-5/6 items-start p-10">
+      {/* <div className="alert alert-info shadow-lg flex flex-col w-5/6 items-start p-10">
         <div className="py-2">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>You must bring a signed liability waver with you the first time.</span>
@@ -52,13 +52,13 @@ const Volunteer = () => {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>On your first day you’ll have an orientation with another volunteer where you’ll meet the animals and be shown around the farm. Someone will be available to help you orient to the different jobs so you become comfortable.</span>
         </div>
-      </div>
+      </div> */}
 
       <div className="w-5/6 m-[3rem]">
         <h1 className="text-primary text-5xl font-semibold">What Does Volunteering at an Animal Sanctuary Involve?</h1>
         <ul className="my-[2rem]">
-          <li className="flex pt-[1rem] pb-[2rem] border-b border-black sm:flex-col md:flex-col lg:flex-row">
-            <h3 className="text-2xl font-semibold basis-1/2">Cleaning residents stalls</h3>
+          <li className="flex pt-[1rem] pb-[2rem] gap-x-5 border-b border-black sm:flex-col md:flex-col lg:flex-row">
+            <h3 className="text-2xl font-semibold basis-1/2 text-right">Cleaning residents stalls</h3>
             <p className="basis-1/2 tracking-widest leading-8 sm:mt-[1rem] md:mt-[1rem] lg:mt-[0rem]">
               Raking up old hay and waste into wheelbarrows <br/>
               Sweep and pick up waste in goat pen <br/>
@@ -111,7 +111,7 @@ const Volunteer = () => {
         </ul>
       </div>
 
-      <div className="alert alert-success shadow-lg flex flex-col w-5/6 items-start p-10">
+      {/* <div className="alert alert-success shadow-lg flex flex-col w-5/6 items-start p-10">
         <div className="py-2">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>Feel free to take pictures and pet the animals, but please remember the volunteer work comes first! The farm needs volunteers to help spread the work out and ensure all jobs are completed so the animals are taken care of properly, and more work isn’t left for the next day’s volunteers.</span>
@@ -124,7 +124,7 @@ const Volunteer = () => {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>We appreciate your help more than you can realize! Thank you for your commitment to the animals & The Happy Herd Farm Sanctuary. Please make sure to consider all of the above before deciding you want to volunteer. Volunteering is work, but it is also very rewarding! If you’re willing, we would love to have you!</span>
         </div>
-      </div>
+      </div> */}
 
       <div className="my-10 text-center">Volunteer application form -- fill it in, submit, translate to pdf for admins @ HH, form will take in everything in the actual form itself<br/>end of volunteer page</div>
     </section>
