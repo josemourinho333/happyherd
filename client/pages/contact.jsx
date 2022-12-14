@@ -21,9 +21,9 @@ const Contact = () => {
           </p>
 
           <div className="flex gap-3 justify-center lg:justify-start">
-            <Link href="https://www.facebook.com/HappyHerdBC/" target="_blank" rel="noreferrer"><SiFacebook className="w-7 h-7"/></Link>
-            <Link href="https://www.instagram.com/thehappyherd/?hl=en" target="_blank" rel="noreferrer"><SiInstagram className="w-7 h-7"/></Link>
-            <Link href="https://twitter.com/TheHappyHerd?lang=en" target="_blank" rel="noreferrer"><SiTwitter className="w-7 h-7"/></Link>
+            <a href="https://www.facebook.com/HappyHerdBC/" target="_blank" rel="noreferrer"><SiFacebook className="w-7 h-7"/></a>
+            <a href="https://www.instagram.com/thehappyherd/?hl=en" target="_blank" rel="noreferrer"><SiInstagram className="w-7 h-7"/></a>
+            <a href="https://twitter.com/TheHappyHerd?lang=en" target="_blank" rel="noreferrer"><SiTwitter className="w-7 h-7"/></a>
           </div>
         </div>
 
