@@ -1,6 +1,4 @@
-import Hero from '../components/hero';
 import HeroCard from '../components/HeroCard';
-import VolunteerCard from './VolunteerCard';
 
 const Volunteer = () => {
 
