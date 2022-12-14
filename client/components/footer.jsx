@@ -1,4 +1,5 @@
 import { SiFacebook, SiTwitter, SiInstagram } from 'react-icons/si';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
         </div>
       </div> 
       <div className="md:place-self-center md:justify-self-end font-extralight">
-        <p>&copy; 2022 The Happy Herd Farm Animal Sanctuary | Privacy Policy | Created by Phil Yoo</p>
+        <p>&copy; 2022 The Happy Herd Farm Animal Sanctuary | <Link href="/privacy">Privacy Policy</Link> | Created by Phil Yoo</p>
       </div>
     </footer>
   )
