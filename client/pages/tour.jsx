@@ -4,6 +4,7 @@ import 'react-calendar/dist/Calendar.css';
 import Hero from '../components/hero';
 import DayModal from '../components/DayModal';
 import HeroCard from '../components/HeroCard';
+import Script from 'next/script';
 
 const Tour = () => {
   const [value, onChange] = useState(new Date());
@@ -24,6 +25,7 @@ const Tour = () => {
     } else {
       document.getElementById(clickedDay).checked = true;
     }
+    
   }, [clickedDay])
 
   return (
@@ -97,10 +99,12 @@ const Tour = () => {
         </div>
       </div>
 
-      <div id="tour" className="col-span-full">
-        <Calendar onChange={onChange} value={value} minDate={new Date()} onClickDay={(value) => clickDay(value)}/>
+      <div id="tour" className="col-span-full min-h-screen">
+        <div className="calendly-inline-widget" data-url="https://calendly.com/yoo-phil92" style={{minWidth: "320px", height:"100%"}}></div>
+        <Script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></Script>
+        {/* <Calendar onChange={onChange} value={value} minDate={new Date()} onClickDay={(value) => clickDay(value)}/> */}
       </div>
-      <DayModal clickedDay={clickedDay}/>
+      {/* <DayModal clickedDay={clickedDay}/> */}
     </div>
   )
 }
