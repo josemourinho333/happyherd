@@ -5,7 +5,7 @@ const Card = ({base, id, title, content, img, category, dead, price, item, color
 
     if (item) {
       return (
-        <a href={`/giftshop/${title}`}>
+        <a href={`/giftshop/${id}`}>
           <div className="carousel-item">
             <div className={`card h-[30rem] ${base ? "opacity-0 bg-transparent shadow-none w-0 sm:w-[7rem] md:w-[10rem] lg:w-[12rem] xl:w-[20rem] 2xl:w-[28rem]" : `bg-base-100 shadow-lg w-[16rem] md:w-[20rem] lg:w-[20rem]`} rounded-lg`}>
               {

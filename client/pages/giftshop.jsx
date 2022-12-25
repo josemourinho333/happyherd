@@ -81,6 +81,7 @@ const GarthsGiftShop = ({items}) => {
     return (
         <Card 
           item={true}
+          id={item.id}
           title={item.title.raw}
           img={item._embedded["wp:featuredmedia"][0].source_url}
           price={item._embedded["wp:term"][4][0].name}

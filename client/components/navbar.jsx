@@ -5,7 +5,7 @@ const NavBar = () => {
 
   return (
     <>
-    <div className="bg-primary text-primary-content py-2 px-5 hidden lg:flex justify-end gap-2 font-light text-sm">
+    <div className="bg-neutral text-base-100 py-2 px-5 hidden lg:flex justify-end gap-2 font-light text-sm">
       <a href="/volunteer">Volunteer</a>
       |
       <a href="/contact">Contact</a>
@@ -43,8 +43,8 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end py-[1rem] px-5 gap-2">
-        <a href="/tour" className="btn btn-primary btn-sm normal-case hidden lg:flex">Book a Tour</a>
-        <a href="/donate" className="btn btn-primary btn-sm normal-case hidden lg:flex">Donate</a>
+        <a href="/tour" className="btn btn-primary text-base-100 btn-sm normal-case hidden lg:flex">Book a Tour</a>
+        <a href="/donate" className="btn btn-primary text-base-100 btn-sm normal-case hidden lg:flex">Donate</a>
       </div>
     </div>
     </>
